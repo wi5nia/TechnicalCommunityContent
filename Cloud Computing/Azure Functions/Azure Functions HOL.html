@@ -478,7 +478,7 @@ vertical-align:1px;
 
 <h2>Overview</h2>
 
-<p>Functions have been the basic building blocks of software since the first lines of code were written and the need for code organization and reuse became a necessity. Azure Functions expands on these concepts by enabling developers to create "serverless", event-driven functions that run in the cloud and can be shared across a wide variety of services and systems, uniformly managed, and easily scaled based on demand. Azure Functions can be written in a variety of languages, including C#, JavaScript, Python, Bash, and PowerShell, and they're perfect for building apps and nanoservices that employ a compute-on-demand model.</p>
+<p>Functions have been the basic building blocks of software since the first lines of code were written and the need for code organization and reuse became a necessity. Azure Functions expand on these concepts by allowing developers to create "serverless", event-driven functions that run in the cloud and can be shared across a wide variety of services and systems, uniformly managed, and easily scaled based on demand. Azure Functions can be written in a variety of languages, including C#, JavaScript, Python, Bash, and PowerShell, and they're perfect for building apps and nanoservices that employ a compute-on-demand model.</p>
 
 <p>In this lab, you will create an Azure Function that monitors a blob container in Azure Storage for new images, and then performs automated analysis of the images using the Microsoft Cognitive Services <a href="https://www.microsoft.com/cognitive-services/en-us/computer-vision-api">Computer Vision API</a>. Specifically, The Azure Function will analyze each image that is uploaded to the container for adult content, create a copy of the image in another container, and store the scores returned by the Computer Vision API in blob metadata.</p>
 
@@ -544,7 +544,7 @@ vertical-align:1px;
 <p><em>Creating an Azure Function App</em></p>
 </li>
 <li>
-<p>Enter an app name that is unique within Azure. Under <strong>Resource Group</strong>, select <strong>Create new</strong> and enter "FunctionsLabResourceGroup" (again without quotation marks) as the resource-group name to create a resource group for the Function App. Accept the default values for all other parameters and click <strong>Create</strong> to create a new Function App.</p>
+<p>Enter an app name that is unique within Azure. Under <strong>Resource Group</strong>, select <strong>Create new</strong> and enter "FunctionsLabResourceGroup" (without quotation marks) as the resource-group name to create a resource group for the Function App. Accept the default values for all other parameters and click <strong>Create</strong> to create a new Function App.</p>
 
 <blockquote>
 <p>The app name becomes part of a DNS name and therefore must be unique within Azure. Make sure a green check mark appears to the name indicating it is unique. You probably <strong>won't</strong> be able to use "functionslab" as the app name.</p>
@@ -558,7 +558,7 @@ vertical-align:1px;
 <p>Click <strong>Resource Groups</strong> in the ribbon on the left side of the portal, and then click the resource group created for the Azure Function ("FunctionsLabResourceGroup") to open a blade for the resource group. When "Deploying" changes to "Succeeded," the Function App has been successfully deployed.</p>
 
 <blockquote>
-<p>Azure typically requires less than 30 seconds to create a Function App. Even so, you may have to refresh the page from time to time to see "Deploying" change to "Succeeded."</p>
+<p>Azure typically requires less than 30 seconds to create a Function App. You may have to click the browser's <strong>Refresh</strong> button every few seconds to update the deployment status. Clicking the <strong>Refresh</strong> button in the resource-group blade refreshes the list of resources in the resource group, but does not reliably update the deployment status.</p>
 </blockquote>
 
 <p><a href="Images/deployment-succeeded.png" target="_blank"><img src="Images/deployment-succeeded.png" alt="Successful deployment" style="max-width:100%;"></a></p>
@@ -644,11 +644,11 @@ vertical-align:1px;
     log.Info(<span class="pl-s"><span class="pl-pds">"</span>Is Racy: <span class="pl-pds">"</span></span> + imageAnalysisResult.adult.isRacyContent.ToString());
     log.Info(<span class="pl-s"><span class="pl-pds">"</span>Racy Score: <span class="pl-pds">"</span></span> + imageAnalysisResult.adult.racyScore.ToString());
 
-   AddMetadata(image, container.Name, blob.Name, imageAnalysisResult, log);
+    AddMetadata(image, container.Name, blob.Name, imageAnalysisResult, log);
 }</pre></div>
 </li>
 <li>
-<p>Add the following helper methods after the <strong>Run</strong> method, and replace <em>storage_account_name</em> with the name of the storage account created for the Azure Function App in Exercise 1.</p>
+<p>Add the following helper methods after the <strong>Run</strong> method, and replace <strong>{storage_account_name}</strong> with the name of the storage account created for the Azure Function App in Exercise 1. (Be sure "_STORAGE" is appended to the name, too.)</p>
 
 <div class="highlight highlight-source-cs"><pre>#region <span class="pl-en">Helpers</span>
 
@@ -673,7 +673,7 @@ vertical-align:1px;
 <span class="pl-c">// Adds metadata to the destination blob</span>
 <span class="pl-k">private</span> <span class="pl-k">static</span> <span class="pl-k">bool</span> AddMetadata(Stream image, <span class="pl-k">string</span> containerName, <span class="pl-k">string</span> fileName, ImageAnalysisInfo imageAnalysisResult, TraceWriter log) {
 
-    <span class="pl-k">var</span> storageAccountConnectionString = ConfigurationManager.AppSettings[<span class="pl-s"><span class="pl-pds">"</span>storage_account_name<span class="pl-pds">"</span></span>].ToString();
+    <span class="pl-k">var</span> storageAccountConnectionString = ConfigurationManager.AppSettings[<span class="pl-s"><span class="pl-pds">"</span>{storage_account_name}_STORAGE<span class="pl-pds">"</span></span>].ToString();
 
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageAccountConnectionString);
 
@@ -770,7 +770,7 @@ vertical-align:1px;
 <p><em>Opening the JSON configuration file</em></p>
 </li>
 <li>
-<p>Replace the JSON in <strong>function.json</strong> with the JSON below. In three places, replace <em>storage_account_name</em> with the name of the storage account that was created for your Azure Function App in Exercise 1. Then click <strong>Save</strong> to save your changes.</p>
+<p>Replace the JSON in <strong>function.json</strong> with the JSON below. In three places, replace <strong><em>{storage_account_name}</em></strong> with the name of the storage account that was created for your Azure Function App in Exercise 1. Then click <strong>Save</strong> to save your changes.</p>
 
 <div class="highlight highlight-source-json"><pre>{
   <span class="pl-s"><span class="pl-pds">"</span>bindings<span class="pl-pds">"</span></span>: [
@@ -779,20 +779,20 @@ vertical-align:1px;
       <span class="pl-s"><span class="pl-pds">"</span>type<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>blobTrigger<span class="pl-pds">"</span></span>,
       <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>image<span class="pl-pds">"</span></span>,
       <span class="pl-s"><span class="pl-pds">"</span>direction<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>in<span class="pl-pds">"</span></span>,
-      <span class="pl-s"><span class="pl-pds">"</span>connection<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>storage_account_name<span class="pl-pds">"</span></span>
+      <span class="pl-s"><span class="pl-pds">"</span>connection<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>{storage_account_name}_STORAGE<span class="pl-pds">"</span></span>
     },
     {
       <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>container<span class="pl-pds">"</span></span>,
       <span class="pl-s"><span class="pl-pds">"</span>type<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>blob<span class="pl-pds">"</span></span>,
       <span class="pl-s"><span class="pl-pds">"</span>path<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>lab-images<span class="pl-pds">"</span></span>,
-      <span class="pl-s"><span class="pl-pds">"</span>connection<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>storage_account_name<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>connection<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>{storage_account_name}_STORAGE<span class="pl-pds">"</span></span>,
       <span class="pl-s"><span class="pl-pds">"</span>direction<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>in<span class="pl-pds">"</span></span>
     },
     {
       <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>blob<span class="pl-pds">"</span></span>,
       <span class="pl-s"><span class="pl-pds">"</span>type<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>blob<span class="pl-pds">"</span></span>,
       <span class="pl-s"><span class="pl-pds">"</span>path<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>lab-images-out/{name}<span class="pl-pds">"</span></span>,
-      <span class="pl-s"><span class="pl-pds">"</span>connection<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>storage_account_name<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>connection<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>{storage_account_name}_STORAGE<span class="pl-pds">"</span></span>,
       <span class="pl-s"><span class="pl-pds">"</span>direction<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>inOut<span class="pl-pds">"</span></span>
     }
   ],
@@ -827,7 +827,7 @@ vertical-align:1px;
 
 <h2>Exercise 3: Connect to a storage account</h2>
 
-<p>Now that the function has been written, you need to configure the services your function will use. You will begin by using the <a href="http://storageexplorer.com" title="Microsoft Azure Storage Explorer">Microsoft Azure Storage Explorer</a> to create a pair of storage containers for the images that the function will process. After creating the storage containers, you will then connect your function to one of them using a blob trigger so the function will execute each time a blob is added to the container.</p>
+<p>Now that the function has been written, you need to configure the services that the function will use. You will begin by using the <a href="http://storageexplorer.com" title="Microsoft Azure Storage Explorer">Microsoft Azure Storage Explorer</a> to create a pair of storage containers for the images that the function will process. After creating the storage containers, you will connect your function to one of them using a blob trigger so the function will execute each time a blob is added to the container.</p>
 
 <blockquote>
 <p>If you haven't installed Storage Explorer, please do so now. Versions are available for Windows, macOS, and Linux.</p>
@@ -925,7 +925,7 @@ vertical-align:1px;
 <p><em>Viewing application settings</em></p>
 </li>
 <li>
-<p>Scroll down the page until you find the <strong>App settings</strong> section. Then add a new app setting entry entering "SubscriptionKey" (without quotation marks) in the <strong>Key</strong> box. For the time being, leave the <strong>Value</strong> box blank.</p>
+<p>Scroll down the page until you find the <strong>App settings</strong> section. Then add a new app setting entry named "SubscriptionKey" (without quotation marks) in the <strong>Key</strong> box. For the time being, leave the <strong>Value</strong> box blank.</p>
 
 <p><a href="Images/function-advanced-settings-add-key.png" target="_blank"><img src="Images/function-advanced-settings-add-key.png" alt="Adding a subscription key" style="max-width:100%;"></a></p>
 
@@ -996,11 +996,11 @@ vertical-align:1px;
 
 <h2>Exercise 5: Test the Azure Function</h2>
 
-<p>Your function has been configured to listen for changes to the blob container named "lab-images" that you created in Exercise 3. Each time an image appears in the container, the function executes and passes the image to the Computer Vision API for analysis. To test the function, you simply upload images to the container. In this exercise, you will use the Microsoft Azure Storage Explorer to do the uploads.</p>
+<p>Your function has been configured to listen for changes to the blob container named "lab-images" that you created in Exercise 3. Each time an image appears in the container, the function executes and passes the image to the Computer Vision API for analysis. To test the function, you simply upload images to the container. In this exercise, you will use the Microsoft Azure Storage Explorer to upload the images.</p>
 
 <ol>
 <li>
-<p>Open Storage Explorer and find the "lab-images" container that you created earlier in Exercise 3. Then click the container. </p>
+<p>Open Storage Explorer and find the "lab-images" container that you created in Exercise 3. Then click the container. </p>
 
 <p><a href="Images/storage-select-source.png" target="_blank"><img src="Images/storage-select-source.png" alt='Opening the "lab-images" container' style="max-width:100%;"></a></p>
 
@@ -1078,7 +1078,7 @@ vertical-align:1px;
 <li>Use Microsoft Cognitive Services to analyze images and store the results in blob metadata</li>
 </ul>
 
-<p>This is just one example of how you can leverage Azure Functions to automate repetitive tasks. Start experimenting with other Azure Function templates and identify other ways you can integrate Azure Functions into your processes.</p>
+<p>This is just one example of how you can leverage Azure Functions to automate repetitive tasks. Experiment with other Azure Function templates to learn more about Azure Functions and to identify additional ways in which they can aid your research or business.</p>
 
 <hr>
 

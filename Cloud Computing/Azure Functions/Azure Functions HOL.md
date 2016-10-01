@@ -6,7 +6,7 @@
 <a name="Overview"></a>
 ## Overview ##
 
-Functions have been the basic building blocks of software since the first lines of code were written and the need for code organization and reuse became a necessity. Azure Functions expands on these concepts by enabling developers to create "serverless", event-driven functions that run in the cloud and can be shared across a wide variety of services and systems, uniformly managed, and easily scaled based on demand. Azure Functions can be written in a variety of languages, including C#, JavaScript, Python, Bash, and PowerShell, and they're perfect for building apps and nanoservices that employ a compute-on-demand model.
+Functions have been the basic building blocks of software since the first lines of code were written and the need for code organization and reuse became a necessity. Azure Functions expand on these concepts by allowing developers to create "serverless", event-driven functions that run in the cloud and can be shared across a wide variety of services and systems, uniformly managed, and easily scaled based on demand. Azure Functions can be written in a variety of languages, including C#, JavaScript, Python, Bash, and PowerShell, and they're perfect for building apps and nanoservices that employ a compute-on-demand model.
 
 In this lab, you will create an Azure Function that monitors a blob container in Azure Storage for new images, and then performs automated analysis of the images using the Microsoft Cognitive Services [Computer Vision API](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api). Specifically, The Azure Function will analyze each image that is uploaded to the container for adult content, create a copy of the image in another container, and store the scores returned by the Computer Vision API in blob metadata.
 
@@ -60,7 +60,7 @@ The first step in writing an Azure Function is to create an Azure Function App. 
 
     _Creating an Azure Function App_
 
-3. Enter an app name that is unique within Azure. Under **Resource Group**, select **Create new** and enter "FunctionsLabResourceGroup" (again without quotation marks) as the resource-group name to create a resource group for the Function App. Accept the default values for all other parameters and click **Create** to create a new Function App.
+3. Enter an app name that is unique within Azure. Under **Resource Group**, select **Create new** and enter "FunctionsLabResourceGroup" (without quotation marks) as the resource-group name to create a resource group for the Function App. Accept the default values for all other parameters and click **Create** to create a new Function App.
 
 	> The app name becomes part of a DNS name and therefore must be unique within Azure. Make sure a green check mark appears to the name indicating it is unique. You probably **won't** be able to use "functionslab" as the app name.
  
@@ -70,7 +70,7 @@ The first step in writing an Azure Function is to create an Azure Function App. 
 
 1. Click **Resource Groups** in the ribbon on the left side of the portal, and then click the resource group created for the Azure Function ("FunctionsLabResourceGroup") to open a blade for the resource group. When "Deploying" changes to "Succeeded," the Function App has been successfully deployed.
 
-	>  Azure typically requires less than 30 seconds to create a Function App. Even so, you may have to refresh the page from time to time to see "Deploying" change to "Succeeded."
+	> Azure typically requires less than 30 seconds to create a Function App. You may have to click the browser's **Refresh** button every few seconds to update the deployment status. Clicking the **Refresh** button in the resource-group blade refreshes the list of resources in the resource group, but does not reliably update the deployment status.
 
     ![Successful deployment](Images/deployment-succeeded.png)
 
@@ -147,12 +147,12 @@ Once you have created an Azure Function App, you can add Azure Functions to it. 
         log.Info("Is Racy: " + imageAnalysisResult.adult.isRacyContent.ToString());
         log.Info("Racy Score: " + imageAnalysisResult.adult.racyScore.ToString());
         
-       AddMetadata(image, container.Name, blob.Name, imageAnalysisResult, log);
+        AddMetadata(image, container.Name, blob.Name, imageAnalysisResult, log);
 	}
 	```
 
-1.	Add the following helper methods after the **Run** method, and replace *storage_account_name* with the name of the storage account created for the Azure Function App in Exercise 1.
- 
+1.	Add the following helper methods after the **Run** method, and replace **{storage_account_name}** with the name of the storage account created for the Azure Function App in Exercise 1. (Be sure "_STORAGE" is appended to the name, too.)
+
 	```C#
 	#region Helpers
 	
@@ -177,7 +177,7 @@ Once you have created an Azure Function App, you can add Azure Functions to it. 
 	// Adds metadata to the destination blob
 	private static bool AddMetadata(Stream image, string containerName, string fileName, ImageAnalysisInfo imageAnalysisResult, TraceWriter log) {
 	    
-	    var storageAccountConnectionString = ConfigurationManager.AppSettings["storage_account_name"].ToString();
+	    var storageAccountConnectionString = ConfigurationManager.AppSettings["{storage_account_name}_STORAGE"].ToString();
 	    
 	    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageAccountConnectionString);
 	
@@ -272,7 +272,7 @@ Once you have created an Azure Function App, you can add Azure Functions to it. 
 
     _Opening the JSON configuration file_
 	
-1. Replace the JSON in **function.json** with the JSON below. In three places, replace *storage_account_name* with the name of the storage account that was created for your Azure Function App in Exercise 1. Then click **Save** to save your changes.
+1. Replace the JSON in **function.json** with the JSON below. In three places, replace ***{storage_account_name}*** with the name of the storage account that was created for your Azure Function App in Exercise 1. Then click **Save** to save your changes.
 
 	```JSON
 	{
@@ -282,20 +282,20 @@ Once you have created an Azure Function App, you can add Azure Functions to it. 
 	      "type": "blobTrigger",
 	      "name": "image",
 	      "direction": "in",
-	      "connection": "storage_account_name"
+	      "connection": "{storage_account_name}_STORAGE"
 	    },
 	    {
 	      "name": "container",
 	      "type": "blob",
 	      "path": "lab-images",
-	      "connection": "storage_account_name",
+	      "connection": "{storage_account_name}_STORAGE",
 	      "direction": "in"
 	    },
 	    {
 	      "name": "blob",
 	      "type": "blob",
 	      "path": "lab-images-out/{name}",
-	      "connection": "storage_account_name",
+	      "connection": "{storage_account_name}_STORAGE",
 	      "direction": "inOut"
 	    }
 	  ],
@@ -328,7 +328,7 @@ An Azure Function written in C# has been created, complete with JSON configurati
 <a name="Exercise3"></a>
 ## Exercise 3: Connect to a storage account ##
 
-Now that the function has been written, you need to configure the services your function will use. You will begin by using the [Microsoft Azure Storage Explorer](http://storageexplorer.com "Microsoft Azure Storage Explorer") to create a pair of storage containers for the images that the function will process. After creating the storage containers, you will then connect your function to one of them using a blob trigger so the function will execute each time a blob is added to the container.
+Now that the function has been written, you need to configure the services that the function will use. You will begin by using the [Microsoft Azure Storage Explorer](http://storageexplorer.com "Microsoft Azure Storage Explorer") to create a pair of storage containers for the images that the function will process. After creating the storage containers, you will connect your function to one of them using a blob trigger so the function will execute each time a blob is added to the container.
 
 > If you haven't installed Storage Explorer, please do so now. Versions are available for Windows, macOS, and Linux.
 
@@ -409,7 +409,7 @@ The Azure Function you created in Exercise 2 references settings in the Azure Fu
 
     _Viewing application settings_
 
-1. Scroll down the page until you find the **App settings** section. Then add a new app setting entry entering "SubscriptionKey" (without quotation marks) in the **Key** box. For the time being, leave the **Value** box blank.
+1. Scroll down the page until you find the **App settings** section. Then add a new app setting entry named "SubscriptionKey" (without quotation marks) in the **Key** box. For the time being, leave the **Value** box blank.
 
     ![Adding a subscription key](Images/function-advanced-settings-add-key.png)
 
@@ -468,9 +468,9 @@ The work of writing and configuring the Azure Function is complete. Now comes th
 <a name="Exercise5"></a>
 ## Exercise 5: Test the Azure Function ##
 
-Your function has been configured to listen for changes to the blob container named "lab-images" that you created in Exercise 3. Each time an image appears in the container, the function executes and passes the image to the Computer Vision API for analysis. To test the function, you simply upload images to the container. In this exercise, you will use the Microsoft Azure Storage Explorer to do the uploads.
+Your function has been configured to listen for changes to the blob container named "lab-images" that you created in Exercise 3. Each time an image appears in the container, the function executes and passes the image to the Computer Vision API for analysis. To test the function, you simply upload images to the container. In this exercise, you will use the Microsoft Azure Storage Explorer to upload the images.
 
-1. Open Storage Explorer and find the "lab-images" container that you created earlier in Exercise 3. Then click the container. 
+1. Open Storage Explorer and find the "lab-images" container that you created in Exercise 3. Then click the container. 
 
     ![Opening the "lab-images" container](Images/storage-select-source.png)
 
@@ -533,7 +533,7 @@ In this hands-on lab you learned how to:
 - Process incoming, outgoing, and bidirectional values from a trigger
 - Use Microsoft Cognitive Services to analyze images and store the results in blob metadata
 
-This is just one example of how you can leverage Azure Functions to automate repetitive tasks. Start experimenting with other Azure Function templates and identify other ways you can integrate Azure Functions into your processes.
+This is just one example of how you can leverage Azure Functions to automate repetitive tasks. Experiment with other Azure Function templates to learn more about Azure Functions and to identify additional ways in which they can aid your research or business.
 
 ---
 
