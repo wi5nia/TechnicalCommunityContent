@@ -51,7 +51,6 @@ This hands-on lab includes the following exercises:
 - [Exercise 4: Enhance and format visualizations](#Exercise4)
 - [Exercise 5: Publish and share content](#Exercise5)
 - [Exercise 6: Create advanced visualizations with Power BI Desktop](#Exercise6)
-
  
 Estimated time to complete this lab: **60** minutes.
 
@@ -245,105 +244,111 @@ No matter how valuable and relevant your data may be, unless it’s presented in
 
 To begin enhancing and formatting your existing visualizations:
 
-1.	Open the Power BI Services Portal (if it’s not already open from Exercise 3) and **click** the **“hamburger”** icon to open the side drawer menu.
+1. Open the Power BI Services Portal (if it’s not already open from Exercise 3) and click the **hamburger** icon to open the side menu.
 	
-2.	Locate the **Reports** section in the side drawer and **click** **Adventure Works**.
+1. Locate the "Reports" section in the side menu and click **Adventure Works**.
 
-	![Selecting the Report Workspace](Images/portal-select-side-report.png)
+	![Opening the Adventure Works report](Images/portal-select-side-report.png)
 	
-	_Selecting the Report Workspace_
+	_Opening the Adventure Works report_
 	
-3.	**Click** on the **header** of the **Slicer Visualization** configured to display a list of customers.
+1. Click the header of the slicer visualization.
 
-	![Selecting the Slicer](Images/portal-select-slicer-header.png)
+	![Selecting the slicer](Images/portal-select-slicer-header.png)
 	
-	_Selecting the Slicer_
+	_Selecting the slicer_
 	
-4.	Locate and **click** the **Format** tab in the **Visualizations** panel.
+1. Click the **Format** tab in the "Visualizations" panel.
 
-	![Selecting the Format Tab](Images/portal-select-format-tab.png)
+	![Accessing formatting options](Images/portal-select-format-tab.png)
 	
-	_Selecting the Format Tab_
+	_Accessing formatting options_
 	
-5.	**Click** to expand the **Items** panel and **select** the ** color picker** in the **Font Color** property and **select a new color**, such as black.
-7.	
-	![Selecting the Color Picker](Images/portal-select-color-picker-01.png)
+1. Expand the "Items" panel and select the color picker in the **Font Color** property and select a new color, such as black.
 	
-	_Selecting the Color Picker_
+	![Changing the font color](Images/portal-select-color-picker-01.png)
+	
+	_Changing the font color_
 		 
-6.	**Enter** a **Text Size** of **12 pt**. You can optionally drag the slider control to increase or decrease this value.
-7.	
-	![Setting Text Size on Items](Images/portal-select-text-size-01.png)
+1. Enter a **Text Size** of **12 pt**. You can optionally drag the slider control to increase or decrease this value.
+
+	![Changing the font size](Images/portal-select-text-size-01.png)
 	
-	_Setting Text Size on Items_
+	_Changing the font size_
 	
-7.	**Click** on the **header** of the **Table Visualization** configured to display a list of customer orders.
+1. Click on the header of the table visualization configured to display a list of customer orders.
 	
-	![Selecting the Table](Images/portal-select-table-header.png)
+	![Selecting the table visualization](Images/portal-select-table-header.png)
 	
-	_Selecting the Table_
+	_Selecting the table visualization_
 	
-8.	**Click** the **Format** tab in the **Visualizations** panel.
-9.	**Click** to expand the **General** panel and enter a **Text Size** of **12 pt**.
+1. Click the **Format** tab in the "Visualizations" panel.
+
+1. Click to expand the "General" panel and enter a **Text Size** of **12 pt**.
 	
-	![Setting General Text Size](Images/portal-select-text-size-02.png)
+	![Setting the text size](Images/portal-select-text-size-02.png)
 	
-	_Setting Text General Size_
+	_Setting the text size_
 	
-10.	**Click** to expand the **Title** panel and **toggle** **Title** to **ON** and **enter** a **Title Text Size** of “Customer Order Counts”.
+1. Click to expand the "Title" panel. Toggle **Title** to **ON** and enter a **Title Text Size** of “Customer Order Counts”.
 	
-	![Editing a Visualization Title](Images/portal-select-title-on.png)
+	![Editing a visualization title](Images/portal-select-title-on.png)
 	
-	_Editing a Visualization Title_
+	_Editing a visualization title_
 	
-11.	**Click** on the **header** of the **Map Visualization** configured to display a list of customer countries.
+1. Click on the header of the map visualization configured to display a list of customer countries.
 	
-	![Editing a Visualization Title](Images/portal-select-map-header.png)
+	![Editing a visualization title](Images/portal-select-map-header.png)
 	
-	_Editing a Visualization Title_
+	_Editing a visualization title_
 	
-12.	**Click** the **Format** tab in the **Visualizations** panel.
-13.	**Click** to expand the **Data colors** panel and **select** the **color picker** in the **Default color** property and **select a new color**, such as purple.
+1. Click the **Format** tab in the "Visualizations" panel.
+
+1. Click to expand the **Data colors** panel and select the color picker in the **Default color** property and select a new color, such as purple.
 	
-	![Selecting Map Data Colors](Images/portal-select-color-picker-02.png)
+	![Changing map colors](Images/portal-select-color-picker-02.png)
 	
-	_Selecting Map Data Colors_
+	_Changing map colors_
+
+1. Locate the **Category** label panel and toggle **Show All** to **ON**.
+
+1. Click **Save** in the top menu to save the changes to your report.
 	
-14.	Locate the **Category** label panel and **toggle** **Show All** to **ON**.
-15.	**Click** **Save** in the **top designer menu** to save the changes to your report.
+	![Turning on map labels](Images/portal-select-map-labels-on.png)
 	
-	![Turning On Map Labels](Images/portal-select-map-labels-on.png)
-	
-	_Turning On Map Labels_	
+	_Turning on map labels_	
 
 As long as Power BI understands the data relationships in your report, you can continue to alter the formatting and visualization styles to suit your preference. For example, it may be more valuable to view customer orders in a graph or chart format. To change the Table Visualization containing orders to a more visual element:
 
-1.	**Click** on the **header** of the **Table Visualization** configured to displaying a list of customer orders.
-2.	Locate the **Orders** entities in the **Fields** panel and **de-select** the **CustomerID** and **OrderId** fields.
-3.	Locate the **Customer** entities in the **Fields** panel and **select** the **CompanyName** field.
+1. Click on the header of the table visualization configured to display a list of customer orders.
+
+1. Locate the "Orders" table in the "Fields" panel and uncheck **CustomerID** and **OrderId**.
+
+1. Locate the "Customers" table in the "Fields" panel and select the **CompanyName** field.
 	
-	![Changing Connected Fields](Images/portal-change-connected-fields-02.png)
+	![Changing connected fields](Images/portal-change-connected-fields-02.png)
 	
-	_Changing Connected Fields_
+	_Changing connected fields_
 	
-4.	**Click** the **Stacked column chart** icon in the **Visualizations** panel.
+1. Click the **Stacked column chart** icon in the "Visualizations" panel.
 	
-	![Changing a Visualization Style](Images/portal-change-column-chart.png)
+	![Changing a visualization style](Images/portal-change-column-chart.png)
 	
-	_Changing a Visualization Style_
+	_Changing a visualization style_
 	
-5.	**Click** the **Format** tab in the **Visualizations** panel.
-6.	**Click** to expand the **Data colors** panel and **select the color picker** in the **Default color** property and **select a new color**, such as purple.
+1. Click the **Format** tab in the "Visualizations" panel.
+
+1. Click to expand the "Data colors" panel and select the color picker in the **Default color** property and select a new color, such as purple.
 	
-	![Changing and Formating a Visualization](Images/portal-change-chart-formatting.png)
+	![Formatting a visualization](Images/portal-change-chart-formatting.png)
 	
-	_Changing and Formating a Visualization_
+	_Formatting a visualization_
 	
-7.	**Click** **Save** in the **top designer menu** to save the changes to your report.
+1. Click **Save** in the top menu to save the changes to your report.
 	
-	![Saving Formating Changes](Images/portal-click-save-menu.png)
+	![Saving your report](Images/portal-click-save-menu.png)
 	
-	_Saving Formating Changes_
+	_Saving your report_
 	
 Feel free to adjust other values as needed and select different Visualizations to observe how data is displayed differently, as well as selecting and de-selecting customers in your Slicer Visualization to filter displayed content. When you’re satisfied with your enhancements and formatting changes, the next step is to publish and share your report in [Exercise 5: Publishing and Sharing Content").
 
