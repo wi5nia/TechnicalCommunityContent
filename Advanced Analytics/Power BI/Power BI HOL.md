@@ -6,7 +6,7 @@
 <a name="Overview"></a>
 ## Overview ##
 
-[Microsoft Power BI](https://powerbi.microsoft.com/en-us/mobile/) was created to address the data explosion in commercial and academic organizations, the need to analyze that data, and the need for rich, interactive visuals to represent the data and reveal key insights. It contains a suite of tools that assist in the full life cycle of data analysis, from data discovery and collection to data transformation, aggregation, visualization, sharing, and collaboration.
+[Microsoft Power BI](https://powerbi.microsoft.com/en-us/mobile/) was created to address the data explosion in commercial and academic organizations, the need to analyze that data, and the need for rich, interactive visuals to represent the data and reveal key insights. It contains a suite of tools that assist in the full life cycle of data analysis, from data discovery and collection to data transformation, aggregation, visualization, sharing, and collaboration. Moreover, it allows you to create rich visualizations without writing any code and present them in interactive dashboards.
 
 Power BI can organize and unify all of your organization’s data to provide a clear, real-time view of your world. Its features include data connectors for a wide range of services and applications, support for popular file formats and databases, a full-featured expression engine, a WYSIWYG editor for creating sophisticated visualizations, support for visualizing data on the Web or on mobile devices running iOS, Android, or Windows, and support for embedding visualizations in your own Web or mobile apps.
 
@@ -14,7 +14,7 @@ Power BI can organize and unify all of your organization’s data to provide a c
 
 _Interactive Power BI dashboard running on iOS and Windows_
 
-In this lab, you will connect Microsoft Power BI to current and historical sales data for a fictitious company and create reports with rich visualizations, present your visualizations in interactive dashboards, and publish your dashboards for public availability.
+In this lab, you will connect Microsoft Power BI to current and historical sales data for a fictitious company and create reports containing rich visualizations. Then you will present your visualizations in interactive dashboards, and publish the dashboards for public availability.
 
 <a name="Objectives"></a>
 ### Objectives ###
@@ -58,11 +58,11 @@ Estimated time to complete this lab: **60** minutes.
 <a name="Exercise1"></a>
 ## Exercise 1: Connect to a database ##
 
-The first step in using Microsoft Power BI to explore and visual your organization's data is to connect to a data source. In this exercise, you will connect to an Azure SQL Server database containing customer, product, and sales data for a fictitious company named Adventure Works.
+The first step in using Microsoft Power BI to explore and visualize data is to connect to a data source. In this exercise, you will connect to an Azure SQL Server database containing customer, product, and sales data for a fictitious company named Adventure Works.
 
 1.	Open the Power BI Services Portal at https://powerbi.microsoft.com. If you are not signed in to Power BI, click **Sign In** and log in with your **Microsoft Office 365 Account**.
 
-1. Click the **hamburger** icon to open the side-drawer menu, and then click **Get Data**.
+1. Click the **hamburger** icon to open the side menu, and then click **Get Data**.
 
     ![Accessing data sources](Images/portal-get-data.png)
 
@@ -74,7 +74,7 @@ The first step in using Microsoft Power BI to explore and visual your organizati
 
     _Accessing databases_
 
-1. Click **Azure SQL Data Warehouse**. Then click **Connect** in the pullout that appears.
+1. Click **Azure SQL Data Warehouse**. Then click **Connect** in the pullout that appears below the tile.
 
 	> If you are informed that "This content pack is a Power BI Pro feature," accept the free trial of Power BI Pro. Then repeat this step to connect to Azure SQL Data Warehouse.
 
@@ -88,7 +88,7 @@ The first step in using Microsoft Power BI to explore and visual your organizati
 
     _Connecting to a SQL Server database_
 
-1. Enter "PowerBILabUser" (without quotation marks) as the username and "PowerBI_1" (again without quotation marks) as the password. Then click **Sign in** to connect to Azure SQL Data Warehouse.
+1. Enter "PowerBILabUser" (without quotation marks) as the username and "PowerBI_1" (again without quotation marks) as the password. Then click **Sign in** to connect to Azure SQL Data Warehouse and the Adventure Works database.
 
     ![Entering SQL Server credentials](Images/portal-enter-credentials.png)
 
@@ -105,13 +105,13 @@ You are now connected to an instance of the Adventure Works database hosted in A
 <a name="Exercise2"></a>
 ## Exercise 2: Create a report ##
 
-The heart of the Power BI is the rich visualizations you can present to the user via dashboards and reports. In this exercise, you will create a report that shows data from one of the tables in the Adventure Works database.
+The heart of Power BI is the rich visualizations you can present to the user via dashboards and reports. In this exercise, you will create a report that shows data from one of the tables in the Adventure Works database.
 
 1. Click **powerbilabs** in the side menu to open the dataset in the report designer.
 
-	![Opening the "powerbilabs" dataset](Images/portal-open-dataset.png)
+	![Opening the powerbilabs dataset](Images/portal-open-dataset.png)
 	
-	_Opening the "powerbilabs" dataset_
+	_Opening the powerbilabs dataset_
 
 1. In the report designer, click the **Table** icon in the "Visualizations" panel to add an empty table visualization to the workspace.
 
@@ -119,19 +119,19 @@ The heart of the Power BI is the rich visualizations you can present to the user
 	
 	_Adding a table visualization_
 
-1. To connect the table visualization to your data, click **Customers** in the "Fields" panel to display the associated fields.
+1. To connect the table visualization to your data, click **Customers** in the "Fields" panel to display the fields in the database's Customers table.
 
-	![Selecting the Customers entity](Images/portal-select-customers-entity.png)
+	![Selecting the Customers table](Images/portal-select-customers-entity.png)
 	
-	_Selecting the Customers entity_
+	_Selecting the Customers table_
 
-1. Check the **CompanyName**, **ContactName**, and **Phone** fields to add these fields to the table visualization.
+1. Check **CompanyName**, **ContactName**, and **Phone** to add these fields to the table visualization.
 
-	> Resize the table visualization as desired by dragging the directional handles located at the edges of the element.
+	> You can resize the table visualization as desired by dragging the directional located at the edges of the element.
 
-	![Selecting Customer fields](Images/portal-select-customer-fields-01.png)
+	![Selecting fields in the Customers table](Images/portal-select-customer-fields-01.png)
 	
-	_Selecting Customer fields_
+	_Selecting fields in the Customers table_
 	
 1. To view your report visualization in interactive mode, click **Reading view**. If prompted to save your report, click **Save** and enter the name "Adventure Works" (without quotation marks).
 
@@ -141,7 +141,7 @@ The heart of the Power BI is the rich visualizations you can present to the user
 	
 	_Switching to Reading View_
 	 
-1. Click the **sorting arrow** in the header of the "CompanyName" column to toggle the sort direction.
+1. Click the **sorting arrow** in the header of the CompanyName column to toggle the sort direction.
 
 	![Toggling the sort direction](Images/portal-select-column-sort.png)
 	
@@ -153,7 +153,7 @@ The heart of the Power BI is the rich visualizations you can present to the user
 	
 	_Exiting interactive mode_
 	
-1. To change the fields displayed in the visualization, go to the "Fields" panel and deselect all of the fields under "Customers." Then click **Products by Category** and check **CategoryName** and **ProductName**. Your table visualization will update with the selected values.
+1. To change the fields displayed in the visualization, go to the "Fields" panel and uncheck all of the fields in the Customers table. Then click **Products by Category** and check **CategoryName** and **ProductName**. Your table visualization will update with the selected values.
 
 	![Changing the fields in the table visualization](Images/portal-select-product-fields-01.png)
 	
@@ -165,14 +165,14 @@ The heart of the Power BI is the rich visualizations you can present to the user
 	
 	_Saving your report_
 
-Your first report visualization has been created, and your first Power BI report has been saved. You can now proceed to Exercise 3: Adding Related Data Visualizations.
+Creating a report from a single table is easy: simply check the fields that you want to display in a table visualization. But there's much more that you can do to visualize the data in a database or other data source.
 
 <a name="Exercise3"></a>
 ## Exercise 3: Add related data visualizations ##
 
 Now that you know how to create a simple visualization, it's easy to add related visualizations as well as create richer visualizations with more complex configurations. In the previous exercise, you visualized product data. In this exercise, you will work with customer data.
 
-1. Remove the existing table visualization by clicking **...** in the upper-right corner and clicking **Remove**.
+1. Remove the existing table visualization by clicking the ellipsis (**...**) in the upper-right corner and clicking **Remove**.
 	
 	![Removing a visualization](Images/portal-remove-tiles.png)
 	
@@ -184,63 +184,59 @@ Now that you know how to create a simple visualization, it's easy to add related
 	
 	_Adding a table visualization_
 	
-1. In the "Fields" panel, check **CompanyName** and **Count of Rows** under "Customers."
+1. In the "Fields" panel, check **CompanyName** and **Count of Rows** under Customers.
 	
-	![Selecting Customer fields](Images/portal-select-customer-fields-02.png)
+	![Selecting fields in the Customers table](Images/portal-select-customer-fields-02.png)
 	
-	_Selecting Customer fields_
+	_Selecting fields in the Customers table_
 	
 1. Click an empty area on the report designer surface to prepare the report designer to accept a new visualization.	 
 	
-1. Check the **CustomerID**, **OrderID** and **Count of Rows** fields under "Orders." Observe that the report designer automatically creates a new table visualization for you.
+1. Check **CustomerID**, **OrderID** and **Count of Rows** under Orders. Observe that the report designer automatically creates a new table visualization for you.
 	
-	![Selecting Order fields](Images/portal-select-order-fields-01.png)
+	![Selecting fields in the Orders table](Images/portal-select-order-fields-01.png)
 	
-	_Selecting Order fields_
+	_Selecting fields in the Orders table_
 	
 1. Click an empty area on the report designer surface to prepare the report designer to accept a new visualization.
 
-1. In the "Visualizations" panel, click the **Slicer** icon to add a slider visualization. Then, in the "Fields" panel, check **CompanyName** under "Customers." The slicer visualization will populate with a list of customers.
-	
-	> Since both of your visualizations contain related data, Power BI automatically understands the relationships and can respond to actions performed in related elements.
+1. In the "Visualizations" panel, click the **Slicer** icon to add a slicer visualization. Then, in the "Fields" panel, check **CompanyName** under Customers. The slicer visualization will populate with a list of customers.
+
+	> The purpose of a slicer is to narrow the portion of the dataset shown in other visualizations. Since both of your visualizations contain related data, Power BI automatically understands the relationships and responds to actions performed in related elements.
 
 	![Adding a slicer visualization](Images/portal-adding-slicer-01.png)
 	
 	_Adding a slicer visualization_
 
-1. To verify how these related elements interact, select a customer from the **Slicer Visualization**, such as “Around the Horn”, and observe the refinement of all related data in your original visualization as the related Table visualization updates to only show order information for the selected customer.
+1. To demonstrate how these related elements interact, click **Around the Horn** in the slicer visualization and observe how the table visualizations update to only show order information for the selected customer.
 	
-	![Viewing Slicer Refinements](Images/portal-selecting-slicer-01.png)
+	![Interacting with the slicer visualization](Images/portal-selecting-slicer-01.png)
 	
-	_Viewing Slicer Refinements_
+	_Interacting with the slicer visualization_
 
-Up to this point in our exercise you’ve been working with simple lists of data. To create more compelling visualizations, simply **click** a different type of visualization in the **Visualizations** panel.
+1. Click **Around the Horn** again to uncheck it.
 
-To change an existing visualization:
+1. Up to this point in the exercise, you have been working with simple lists of data. To create more compelling visualizations, you can select a different type of visualization in the "Visualizations" panel. To demonstrate, begin by selecting the table visualization that shows Customer, CompanyName, and Count of Rows.
 
-1. Select the **Table** visualization currently configured to display **Customer**, **CompanyName**, and **Count of Rows** data.
-
-1. Locate the **Customer** entities in the **Fields** panel and **de-select** the **CompanyName** field, and then **select** the **Country** field.
+1. In the Customers section of the "Fields" panel, uncheck **CompanyName** and check **Country**.
 	
-	![Changing Visualization Fields](Images/portal-change-connected-fields-01.png)
+	![Changing the fields displayed in a visualization](Images/portal-change-connected-fields-01.png)
 	
-	_Changing Visualization Fields_
+	_Changing the fields displayed in a visualization_
 
-1. In the **Visualizations** panel, **select** the **Map Visualization** and observe the change to your visualization from a list to an interactive map, including proportional representation of map elements based on the Count of Rows field.
-
-6. Hover your mouse over a map element to view a tooltip containing header aggregation information for a customer. 
+1. In the "Visualizations" panel, click the **Map Visualization** icon and observe how the table visualization changes to an interactive map that includes proportionally sized map elements (the green circles) representing the number of customers in different countries. The customer counts come from the Count of Rows field. Now hover the mouse cursor over one of the green circles in the map visualization to display a tooltip containing information about the number of customers in that country. 
 	
-	![Changing Visualization Fields](Images/portal-change-to-map.png)
+	![Changing a table to a map](Images/portal-change-to-map.png)
 	
-	_Changing Visualization Fields_
+	_Changing a table to a map_
 
-1. Click **Save** in the **top designer menu** to save the changes to your report.
+1. Click **Save** in the top menu to save the changes to your report.
 	
 	![Saving Report Changes](Images/portal-click-save-menu.png)
 	
 	_Saving Report Changes_
 
-In this exercise you’ve experienced how simple, intelligent, and powerful adding and configuring related data visualizations can be in Power BI. Since our current visualizations are fairly plain, it’s time to see how to give them a bit more flair in [Exercise 4: Enhancing and Formatting Visualizations](#Exercise4").
+The map visualization is a step in right direction toward creating richer visualizations, but your report is still somewhat plain. In the next exercise, you will add more flair.
 
 <a name="Exercise4"></a>
 ## Exercise 4: Enhance and format visualizations ##
