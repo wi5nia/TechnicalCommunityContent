@@ -223,7 +223,7 @@ Now that you know how to create a simple visualization, it's easy to add related
 	
 	_Changing the fields displayed in a visualization_
 
-1. In the "Visualizations" panel, click the **Map Visualization** icon and observe how the table visualization changes to an interactive map that includes proportionally sized map elements (the green circles) representing the number of customers in different countries. The customer counts come from the Count of Rows field. Now hover the mouse cursor over one of the green circles in the map visualization to display a tooltip containing information about the number of customers in that country. 
+1. In the "Visualizations" panel, click the **Map** icon and observe how the table visualization changes to an interactive map that includes proportionally sized map elements (the green circles) representing the number of customers in different countries. The customer counts come from the Count of Rows field. Now hover the mouse cursor over one of the green circles in the map to display a tooltip containing information about the number of customers in that country. 
 	
 	![Changing a table to a map](Images/portal-change-to-map.png)
 	
@@ -231,118 +231,98 @@ Now that you know how to create a simple visualization, it's easy to add related
 
 1. Click **Save** in the top menu to save the changes to your report.
 	
-	![Saving Report Changes](Images/portal-click-save-menu.png)
+	![Saving your report](Images/portal-click-save-menu.png)
 	
-	_Saving Report Changes_
+	_Saving your report_
 
 The map visualization is a step in right direction toward creating richer visualizations, but your report is still somewhat plain. In the next exercise, you will add more flair.
 
 <a name="Exercise4"></a>
 ## Exercise 4: Enhance and format visualizations ##
 
-No matter how valuable and relevant your data may be, unless it’s presented in a way that’s both easy to understand and visually appealing, consumers and viewers of the data will have challenges understanding and identifying the information in a way that adds value. One of the most effective ways to grab a viewer’s attention, and increase to change of processing and retaining the relevant information, is to apply formatting and other enhancements to the way data is displayed.
+No matter how valuable and relevant your data may be, unless it's presented in a way that's easy to understand and visually appealing, consumers of that data will find it difficult to extract meaning from it. One of the most effective ways to grab a viewer's attention and present data in a meaningful way is to apply formatting and other enhancements to your visualizations. In this exercise, you will enhance the visualizations you have created in order to dress up your report.
 
-To begin enhancing and formatting your existing visualizations:
-
-1. Open the Power BI Services Portal (if it’s not already open from Exercise 3) and click the **hamburger** icon to open the side menu.
-	
-1. Locate the "Reports" section in the side menu and click **Adventure Works**.
-
-	![Opening the Adventure Works report](Images/portal-select-side-report.png)
-	
-	_Opening the Adventure Works report_
-	
-1. Click the header of the slicer visualization.
+1. Click the header of the slicer visualization to select the slicer.
 
 	![Selecting the slicer](Images/portal-select-slicer-header.png)
 	
 	_Selecting the slicer_
 	
-1. Click the **Format** tab in the "Visualizations" panel.
+1. Click the **Format** icon in the "Visualizations" panel.
 
-	![Accessing formatting options](Images/portal-select-format-tab.png)
+	![Displaying formatting options](Images/portal-select-format-tab.png)
 	
-	_Accessing formatting options_
+	_Displaying formatting options_
 	
-1. Expand the "Items" panel and select the color picker in the **Font Color** property and select a new color, such as black.
+1. Click **Items** to expand the "Items" panel. Then use the color picker adjacent to "Font color" to set the font color to black.
 	
 	![Changing the font color](Images/portal-select-color-picker-01.png)
 	
 	_Changing the font color_
 		 
-1. Enter a **Text Size** of **12 pt**. You can optionally drag the slider control to increase or decrease this value.
+1. Change the text size to 12.
 
-	![Changing the font size](Images/portal-select-text-size-01.png)
+	![Changing the text size](Images/portal-select-text-size-01.png)
 	
-	_Changing the font size_
+	_Changing the text size_
 	
-1. Click on the header of the table visualization configured to display a list of customer orders.
+1. Click the header of the table visualization to select it.
 	
 	![Selecting the table visualization](Images/portal-select-table-header.png)
 	
 	_Selecting the table visualization_
 	
-1. Click the **Format** tab in the "Visualizations" panel.
-
-1. Click to expand the "General" panel and enter a **Text Size** of **12 pt**.
+1. Click the **Format** icon in the "Visualizations" panel. Then expand the "General" panel and set the text size to 12.
 	
-	![Setting the text size](Images/portal-select-text-size-02.png)
+	![Changing the text size](Images/portal-select-text-size-02.png)
 	
-	_Setting the text size_
+	_Changing the text size_
 	
-1. Click to expand the "Title" panel. Toggle **Title** to **ON** and enter a **Title Text Size** of “Customer Order Counts”.
+1. Expand the "Title" panel and click the slider to change **Off** to **On**. Then type "Customer Order Counts" (without quotation marks) into the "Title Text" box.
 	
 	![Editing a visualization title](Images/portal-select-title-on.png)
 	
 	_Editing a visualization title_
 	
-1. Click on the header of the map visualization configured to display a list of customer countries.
+1. Click the header of the map visualization to select it.
 	
-	![Editing a visualization title](Images/portal-select-map-header.png)
+	![Selecting the map visualization](Images/portal-select-map-header.png)
 	
-	_Editing a visualization title_
+	_Selecting the map visualization_
 	
-1. Click the **Format** tab in the "Visualizations" panel.
+1. Click the **Format** icon in the "Visualizations" panel. Then expand the "Data colors" panel and use the color picker adjacent to "Default color" to set the default color to purple.
+	
+	![Changing the map's default color](Images/portal-select-color-picker-02.png)
+	
+	_Changing the map's default color_
 
-1. Click to expand the **Data colors** panel and select the color picker in the **Default color** property and select a new color, such as purple.
-	
-	![Changing map colors](Images/portal-select-color-picker-02.png)
-	
-	_Changing map colors_
-
-1. Locate the **Category** label panel and toggle **Show All** to **ON**.
-
-1. Click **Save** in the top menu to save the changes to your report.
+1. Click the slider next to "Category labels" to change **Off** to **On** and turn labels on in the map.
 	
 	![Turning on map labels](Images/portal-select-map-labels-on.png)
 	
-	_Turning on map labels_	
+	_Turning on map labels_
 
-As long as Power BI understands the data relationships in your report, you can continue to alter the formatting and visualization styles to suit your preference. For example, it may be more valuable to view customer orders in a graph or chart format. To change the Table Visualization containing orders to a more visual element:
-
-1. Click on the header of the table visualization configured to display a list of customer orders.
+1. Click the header of the table visualization to select it.
 
 1. Locate the "Orders" table in the "Fields" panel and uncheck **CustomerID** and **OrderId**.
 
-1. Locate the "Customers" table in the "Fields" panel and select the **CompanyName** field.
+1. Locate the "Customers" table in the "Fields" panel and check **CompanyName**.
 	
-	![Changing connected fields](Images/portal-change-connected-fields-02.png)
+	![Adding CompanyName to the table visualization](Images/portal-change-connected-fields-02.png)
 	
-	_Changing connected fields_
+	_Adding CompanyName to the table visualization_
 	
 1. Click the **Stacked column chart** icon in the "Visualizations" panel.
 	
-	![Changing a visualization style](Images/portal-change-column-chart.png)
+	![Changing a table visualization into a stacked column chart](Images/portal-change-column-chart.png)
 	
-	_Changing a visualization style_
+	_Changing a table visualization into a stacked column chart_
 	
-1. Click the **Format** tab in the "Visualizations" panel.
-
-1. Click to expand the "Data colors" panel and select the color picker in the **Default color** property and select a new color, such as purple.
+1. Click the **Format** icon in the "Visualizations" panel. Then expand the "Data colors" panel and use the color picker adjacent to "Default color" to set the default color to purple.
 	
-	![Formatting a visualization](Images/portal-change-chart-formatting.png)
+	![Changing the chart's default color](Images/portal-change-chart-formatting.png)
 	
-	_Formatting a visualization_
+	_Changing the chart's default color_
 	
 1. Click **Save** in the top menu to save the changes to your report.
 	
@@ -350,102 +330,84 @@ As long as Power BI understands the data relationships in your report, you can c
 	
 	_Saving your report_
 	
-Feel free to adjust other values as needed and select different Visualizations to observe how data is displayed differently, as well as selecting and de-selecting customers in your Slicer Visualization to filter displayed content. When you’re satisfied with your enhancements and formatting changes, the next step is to publish and share your report in [Exercise 5: Publishing and Sharing Content").
+Feel free to adjust other values as well and try different visualizations to see how the data is presented. When you are satisfied with your formatting changes, the next step is to publish and share your report.
 
 <a name="Exercise5"></a>
 ## Exercise 5: Publish and share content ##
 
-Power BI makes it easy to publish and share your content with users and groups both internal and external to your organization. Although the publishing and sharing capabilities of Power BI are quite robust, only basic publishing and sharing are available when using the Power BI Web Portal.
+Power BI makes it easy to publish and share your content with users and groups of users, both internal and external to your organization. Although the publishing and sharing capabilities of Power BI are quite robust, only basic publishing and sharing are available when using the Power BI Service Portal. In this exercise, you will insert the report that you created in previous exercises into a dashboard and share that dashboard with other Power BI users. The you will see how Power BI's "Publish to Web" feature can be used to share content with any user.
 
-To share your **Dashboard** with other Power BI users:
+1. Click **Pin Live Page** in the top menu of the Adventure Works dashboard.
+	
+	![Pinning a live page](Images/portal-select-pin-live-page.png)
+	
+	_Pinning a live page_
+	
+1. Select **New dashboard**, enter "Adventure Works" (without quotation marks) as the dashboard title, and click **Pin live**.
+	
+	![Creating a new dashboard](Images/portal-create-new-dashboard.png)
+	
+	_Creating a new dashboard_
+	
+1. Click **Adventure Works** in the "Dashboards" section of the side menu.
 
-1.	Open the Power BI Services Portal (if it’s not already open from Exercise 4) and **click** the **“hamburger”** icon to open the side drawer menu.
-2.	Locate the **Report** section in the side drawer and **click** **Adventure Works**.
+	![Selecting the Adventure Works dashboard](Images/portal-select-new-dashboard.png)
+	
+	_Selecting the Adventure Works dashboard_
+	
+1. Click **Share** in the upper-right corner of the dashboard.
 
-	![Selecting the Report Workspace](Images/portal-select-side-report.png)
+	![Selecting the Share icon](Images/portal-select-share-icon.png)
 	
-	_Selecting the Report Workspace_
+	_Selecting the Share icon_
 	
-3.	**Click** the **Pin Live Page** icon in the **upper right menu** of the **Adventure Works** dashboard.
-	
-	![Pinning a Live Page](Images/portal-select-pin-live-page.png)
-	
-	_Pinning a Live Page_
-	
-3.	On the **Pin to dashboard** dialog **select** **New dashboard**, enter "Adventure Works" for the dashboard title, and then **click** **Pin live**.
-	
-	![Creating a New Dashboard](Images/portal-create-new-dashboard.png)
-	
-	_Creating a New Dashboard_
-	
-	
-	![A Successful Live Report Creation](Images/portal-live-report-pinned.png)
-	
-	_A Successful Live Report Creation_
-	
-2.	Locate the **Dashboard** section in the side drawer and **click** the newly created **Adventure Works** dashboard.
+1. Type your Office 365 e-mail address — the one you logged into Power BI with — into the e-mail address box. Then click **Share** to e-mail yourself a link to the Adventure Works dashboard.
 
-	![Selecting the New Dashboard](Images/portal-select-new-dashboard.png)
-	
-	_Selecting the New Dashboard_
-	
-5.	**Click** the **Share** icon in the **upper right menu** of the **Adventure Works** dashboard.
+	> You are only sharing the dashboard with yourself, but realize that you can share the dashboard with any Power BI user by including the e-mail address that they use to access Power BI in the list of e-mail addresses that you enter.
 
-	![Selecting the Share Icon](Images/portal-select-share-icon.png)
+	![Providing a list of recipients](Images/portal-enter-share-info.png)
 	
-	_Selecting the Share Icon_
+	_Providing a list of recipients_
 	
-6.	Enter your **Office 365 email address** in the text box provided.
-7.	**Click** **Share** to send a share link for your Adventure Works dashboard via email.
+1. Click **Share** again. Click **Access** and copy the URL under **Dashboard Link** to the clipboard. Then click the **Close** button to close the "Share dashboard" panel.
 
-	![Providing Sharing Information](Images/portal-enter-share-info.png)
+	![Copying the dashboard link](Images/portal-optional-share-info.png)
 	
-	_Providing Sharing Information_
-	
-8.	To optionally view the content and experience being shared, **select** the **Access** tab and copy the **Dashboard Link URL** and **paste** it into a **new browser window**.
-9.	
-	![Accessing the Sharing Link](Images/portal-optional-share-info.png)
-	
-	_Accessing the Sharing Link_
-	
+	_Copying the dashboard link_
 
-To publish your **Report** for public access:
+1. Open a new browser tab or window and paste the dashboard link into the address bar to see how the dashboard will appear to users you share it with.
 
-1.	Open the Power BI Services Portal (if it’s not already open from Exercise 4) and **click** the **“hamburger”** icon to open the side drawer menu.
-2.	Locate the **Reports** section in the side drawer and **click** **Adventure Works**.
+1. Sharing a dashboard this way limits its visibility to those you grant access to. However, Power BI also offers a "Publish to Web" feature that allows a report to be embedded in a public Web site or shared publicly through a URL. To demonstrate, return to the Power BI Services Portal and click **Adventure Works** in the "Reports" section of the side menu to open the report.
 
-	![Selecting the Report Workspace](Images/portal-select-side-report.png)
+	![Opening the Adventure Works report](Images/portal-select-side-report.png)
 	
-	_Selecting the Report Workspace_
+	_Opening the Adventure Works report_
 	
-3.	**Click** the **File** menu in the upper right menu of the **Adventure Works** report, followed by **Publish to web**.
-4.	
+1. Click **File** in the menu in the upper-left corner of the report, and then click **Publish to web**.
+		
 	![Publishing to the Web](Images/portal-select-file-publish.png)
 	
 	_Publishing to the Web_
 	
-	>	If this is the first time to publish the current report, Power BI will display a series of dialogs to ensure you understand the public access polices relating to sharing your organizational content. If prompted to review this information:
-		
-	- On the **Embed in a public website** dialog, review the information and **click** **Create embed code**.
+1. Click **Create embed code**.
 
-	![Creating an Embed Code](Images/portal-embed-warning-01.png)
+	![Creating an embed code](Images/portal-embed-warning-01.png)
 	
-	_Creating an Embed Code_
+	_Creating an embed code_
 	
-	- On the subsequent **Embed in a public website** dialog, review the information and **click** **Publish**.
+1. Click **Publish**.
 
-	![The Embedding Information Warning](Images/portal-embed-warning-02.png)
+	![Acknowledging that the report will be public](Images/portal-embed-warning-02.png)
 	
-	_The Embedding Information Warning_
+	_Acknowledging that the report will be public_
 	
-5.	A final dialog will be display containing a share link you can send via email, as well as “embed code” to add to a web page for external viewing.
-6.	
-	![Viewing a Publishing Embed Code](Images/portal-embed-success.png)
-	
-	_Viewing a Publishing Embed Code_
-	
+1. The dialog that ensues contains two important values: a link that you can use to share the report with anyone (whether they're a Power BI user or not), and an IFRAME that you can paste into a Web page to embed the report in the page. Inspect these values, and then click **Close** to close the dialog.
 
-It’s that simple to publish and share your Power BI content. If you’re working with Power BI on a Windows computer, it’s time to move to more advanced scenarios in [Exercise 6: Advanced Modeling](#Exercise6").
+	![Values for sharing a report publicly](Images/portal-embed-success.png)
+	
+	_Values for sharing a report publicly_
+
+It's that simple to publish and share your Power BI content. If you’re working with Power BI on a Windows computer, it’s time to move to more advanced scenarios in [Exercise 6: Advanced Modeling](#Exercise6").
 
 
 <a name="Exercise6"></a>
