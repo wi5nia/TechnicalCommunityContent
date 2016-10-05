@@ -14,7 +14,7 @@ Power BI can organize and unify all of your organization’s data to provide a c
 
 _Interactive Power BI dashboard running on iOS and Windows_
 
-In this lab, you will connect Microsoft Power BI to current and historical sales data for a fictitious company and create reports containing rich visualizations. Then you will present your visualizations in interactive dashboards, and publish the dashboards for public availability.
+In this lab, you will use Microsoft Power BI to view sales data for a fictitious company and create reports and dashboards containing visualizations of that data. You will learn the basics of report creation and also learn various ways to share those reports with others, both internal and external to your organization. 
 
 <a name="Objectives"></a>
 ### Objectives ###
@@ -23,11 +23,10 @@ In this hands-on lab, you will learn how to:
 
 - Connect Power BI to business data
 - Visualize business data in a dashboard
-- Add visualization relationships
+- Add relationships to the visualizations you create
 - Enhance visualizations and reports with formatting
 - Publish and share Power BI content
-- Use Power BI Desktop to perform advanced modeling techniques
-
+- Use Power BI Desktop to do advanced modeling
 
 <a name="Prerequisites"></a>
 ### Prerequisites ###
@@ -46,11 +45,11 @@ The following are required to complete this hands-on lab:
 This hands-on lab includes the following exercises:
 
 - [Exercise 1: Connect to a database](#Exercise1)
-- [Exercise 2: Create a report](#Exercise2)
-- [Exercise 3: Add related data visualizations](#Exercise3)
-- [Exercise 4: Enhance and format visualizations](#Exercise4)
+- [Exercise 2: Create a data visualization](#Exercise2)
+- [Exercise 3: Add related visualizations](#Exercise3)
+- [Exercise 4: Enhance your visualizations](#Exercise4)
 - [Exercise 5: Publish and share content](#Exercise5)
-- [Exercise 6: Create advanced visualizations with Power BI Desktop](#Exercise6)
+- [Exercise 6: Do more with Power BI Desktop](#Exercise6)
  
 Estimated time to complete this lab: **60** minutes.
 
@@ -59,7 +58,7 @@ Estimated time to complete this lab: **60** minutes.
 
 The first step in using Microsoft Power BI to explore and visualize data is to connect to a data source. In this exercise, you will connect to an Azure SQL Server database containing customer, product, and sales data for a fictitious company named Adventure Works.
 
-1.	Open the Power BI Services Portal at https://powerbi.microsoft.com. If you are not signed in to Power BI, click **Sign In** and log in with your **Microsoft Office 365 Account**.
+1.	Open the Power BI Services Portal at https://powerbi.microsoft.com. If you are not signed in to Power BI, click **Sign In** and log in with your Microsoft Office 365 Account.
 
 1. Click the **hamburger** icon to open the side menu, and then click **Get Data**.
 
@@ -93,7 +92,7 @@ The first step in using Microsoft Power BI to explore and visualize data is to c
 
     _Entering SQL Server credentials_
 
-1. Click the **hamburger** icon to open the side menu and confirm that a new item named "powerbilabs" appears in the menu under "Datasets."
+1. Click the **hamburger** icon to open the side menu if it isn't already open, and confirm that a new item named "powerbilabs" appears in the menu under "Datasets."
 
 	![The new dataset](Images/portal-new-dataset.png)
 	
@@ -102,7 +101,7 @@ The first step in using Microsoft Power BI to explore and visualize data is to c
 You are now connected to an instance of the Adventure Works database hosted in Azure SQL Data Warehouse. Now it's time to build a report that depicts some of the data in the database.
 
 <a name="Exercise2"></a>
-## Exercise 2: Create a report ##
+## Exercise 2: Create a data visualization ##
 
 The heart of Power BI is the rich visualizations you can present to the user via dashboards and reports. In this exercise, you will create a report that shows data from one of the tables in the Adventure Works database.
 
@@ -126,7 +125,7 @@ The heart of Power BI is the rich visualizations you can present to the user via
 
 1. Check **CompanyName**, **ContactName**, and **Phone** to add these fields to the table visualization.
 
-	> You can resize the table visualization as desired by dragging the directional located at the edges of the element.
+	> You can resize the table visualization as desired by dragging the directional handles located around its edges.
 
 	![Selecting fields in the Customers table](Images/portal-select-customer-fields-01.png)
 	
@@ -136,11 +135,11 @@ The heart of Power BI is the rich visualizations you can present to the user via
 
 	> In interactive mode, you can perform actions on your visualizations, such as sorting, grouping, and drilling down into other report elements. 
 
-	![Switching to Reading View](Images/portal-select-reading-view.png)
+	![Switching to reading view](Images/portal-select-reading-view.png)
 	
-	_Switching to Reading View_
+	_Switching to reading view_
 	 
-1. Click the **sorting arrow** in the header of the CompanyName column to toggle the sort direction.
+1. Click the arrow in the header of the CompanyName column to toggle the sort direction.
 
 	![Toggling the sort direction](Images/portal-select-column-sort.png)
 	
@@ -152,7 +151,7 @@ The heart of Power BI is the rich visualizations you can present to the user via
 	
 	_Exiting interactive mode_
 	
-1. To change the fields displayed in the visualization, go to the "Fields" panel and uncheck all of the fields in the Customers table. Then click **Products by Category** and check **CategoryName** and **ProductName**. Your table visualization will update with the selected values.
+1. To change the fields displayed in the visualization, go to the "Fields" panel and uncheck all of the fields in the Customers table. Then click **Products by Category** to show the items underneath it, and check **CategoryName** and **ProductName**. Your table visualization will update with the selected values.
 
 	![Changing the fields in the table visualization](Images/portal-select-product-fields-01.png)
 	
@@ -164,12 +163,12 @@ The heart of Power BI is the rich visualizations you can present to the user via
 	
 	_Saving your report_
 
-Creating a report from a single table is easy: simply check the fields that you want to display in a table visualization. But there's much more that you can do to visualize the data in a database or other data source.
+Creating a report from a single table is easy: simply check the fields that you want to display in a visualization. You used a table visualization in this exercise, but there are lots of other visualizations to choose from. Feel free to try other visualizations and experiment with the different ways in which data can be visualized.
 
 <a name="Exercise3"></a>
 ## Exercise 3: Add related data visualizations ##
 
-Now that you know how to create a simple visualization, it's easy to add related visualizations as well as create richer visualizations with more complex configurations. In the previous exercise, you visualized product data. In this exercise, you will work with customer data.
+Now that you know how to create a simple visualization, it's easy to add related visualizations as well as create visualizations of other types. In the previous exercise, you used a table visualization to depict product data. In this exercise, you will work with customer data using table visualizations and map visualizations.
 
 1. Remove the existing table visualization by clicking the ellipsis (**...**) in the upper-right corner and clicking **Remove**.
 	
@@ -207,11 +206,13 @@ Now that you know how to create a simple visualization, it's easy to add related
 	
 	_Adding a slicer visualization_
 
-1. To demonstrate how these related elements interact, click **Around the Horn** in the slicer visualization and observe how the table visualizations update to only show order information for the selected customer.
+1. To demonstrate how related visualizations interact, click **Around the Horn** in the slicer visualization and observe how the table visualizations update to show order information for the selected customer.
+
+	> You can select multiple customers in the slicer by holding down the Ctrl key as you check the boxes for each customer.
 	
-	![Interacting with the slicer visualization](Images/portal-selecting-slicer-01.png)
+	![Showing data for a specific customer](Images/portal-selecting-slicer-01.png)
 	
-	_Interacting with the slicer visualization_
+	_Showing data for a specific customer_
 
 1. Click **Around the Horn** again to uncheck it.
 
@@ -235,10 +236,10 @@ Now that you know how to create a simple visualization, it's easy to add related
 	
 	_Saving your report_
 
-The map visualization is a step in right direction toward creating richer visualizations, but your report is still somewhat plain. In the next exercise, you will add more flair.
+The map visualization is a step in right direction toward creating richer visualizations, but your report is still somewhat plain. In the next exercise, you will use some of Power BI's report formatting options to add more flair.
 
 <a name="Exercise4"></a>
-## Exercise 4: Enhance and format visualizations ##
+## Exercise 4: Enhance your visualizations ##
 
 No matter how valuable and relevant your data may be, unless it's presented in a way that's easy to understand and visually appealing, consumers of that data will find it difficult to extract meaning from it. One of the most effective ways to grab a viewer's attention and present data in a meaningful way is to apply formatting and other enhancements to your visualizations. In this exercise, you will enhance the visualizations you have created in order to dress up your report.
 
@@ -304,15 +305,13 @@ No matter how valuable and relevant your data may be, unless it's presented in a
 
 1. Click the header of the table visualization to select it.
 
-1. Locate the "Orders" table in the "Fields" panel and uncheck **CustomerID** and **OrderId**.
+1. Locate the Customers table in the "Fields" panel and check **CompanyName**. Then move down to the Orders table and uncheck **CustomerID** and **OrderId**.
 
-1. Locate the "Customers" table in the "Fields" panel and check **CompanyName**.
+	![Changing the fields shown in the table visualization](Images/portal-change-connected-fields-02.png)
 	
-	![Adding CompanyName to the table visualization](Images/portal-change-connected-fields-02.png)
+	_Changing the fields shown in the table visualization_
 	
-	_Adding CompanyName to the table visualization_
-	
-1. Click the **Stacked column chart** icon in the "Visualizations" panel.
+1. Click the **Stacked column chart** icon in the "Visualizations" panel to change the table visualization into a stacked-column chart.
 	
 	![Changing a table visualization into a stacked column chart](Images/portal-change-column-chart.png)
 	
@@ -330,12 +329,12 @@ No matter how valuable and relevant your data may be, unless it's presented in a
 	
 	_Saving your report_
 	
-Feel free to adjust other values as well and try different visualizations to see how the data is presented. When you are satisfied with your formatting changes, the next step is to publish and share your report.
+Feel free to adjust other values as well and try different visualizations to see how the data is presented. When you are satisfied with the formatting changes, the next step is to share your report.
 
 <a name="Exercise5"></a>
 ## Exercise 5: Publish and share content ##
 
-Power BI makes it easy to publish and share your content with users and groups of users, both internal and external to your organization. Although the publishing and sharing capabilities of Power BI are quite robust, only basic publishing and sharing are available when using the Power BI Service Portal. In this exercise, you will insert the report that you created in previous exercises into a dashboard and share that dashboard with other Power BI users. The you will see how Power BI's "Publish to Web" feature can be used to share content with any user.
+Power BI makes it easy to publish and share your content with users and groups of users, both internal and external to your organization. In this exercise, you will insert the report that you created in previous exercises into a dashboard and learn how to share that dashboard with other Power BI users. The you will see how Power BI's "Publish to Web" feature can be used to share content with external users.
 
 1. Click **Pin Live Page** in the top menu of the Adventure Works dashboard.
 	
@@ -357,17 +356,17 @@ Power BI makes it easy to publish and share your content with users and groups o
 	
 1. Click **Share** in the upper-right corner of the dashboard.
 
-	![Selecting the Share icon](Images/portal-select-share-icon.png)
+	![Sharing the dashboard](Images/portal-select-share-icon.png)
 	
-	_Selecting the Share icon_
+	_Sharing the dashboard_
 	
 1. Type your Office 365 e-mail address — the one you logged into Power BI with — into the e-mail address box. Then click **Share** to e-mail yourself a link to the Adventure Works dashboard.
 
 	> You are only sharing the dashboard with yourself, but realize that you can share the dashboard with any Power BI user by including the e-mail address that they use to access Power BI in the list of e-mail addresses that you enter.
 
-	![Providing a list of recipients](Images/portal-enter-share-info.png)
+	![Entering a list of recipients](Images/portal-enter-share-info.png)
 	
-	_Providing a list of recipients_
+	_Entering a list of recipients_
 	
 1. Click **Share** again. Click **Access** and copy the URL under **Dashboard Link** to the clipboard. Then click the **Close** button to close the "Share dashboard" panel.
 
@@ -397,9 +396,9 @@ Power BI makes it easy to publish and share your content with users and groups o
 	
 1. Click **Publish**.
 
-	![Acknowledging that the report will be public](Images/portal-embed-warning-02.png)
+	![Publishing the report](Images/portal-embed-warning-02.png)
 	
-	_Acknowledging that the report will be public_
+	_Publishing the report_
 	
 1. The dialog that ensues contains two important values: a link that you can use to share the report with anyone (whether they're a Power BI user or not), and an IFRAME that you can paste into a Web page to embed the report in the page. Inspect these values, and then click **Close** to close the dialog.
 
@@ -407,133 +406,101 @@ Power BI makes it easy to publish and share your content with users and groups o
 	
 	_Values for sharing a report publicly_
 
-It's that simple to publish and share your Power BI content. If you’re working with Power BI on a Windows computer, it’s time to move to more advanced scenarios in [Exercise 6: Advanced Modeling](#Exercise6").
+It's that simple to publish and share your Power BI content. If you are working with Power BI on a Windows computer, you can do even more by leveraging Power BI Desktop. If you are running Windows, proceed to Exercise 6. Otherwise, you are finished with this lab.
 
 
 <a name="Exercise6"></a>
-## Exercise 6: Create advanced visualizations with Power BI Desktop ##
+## Exercise 6: Do more with Power BI Desktop ##
 
-Although Power BI Services are flexible, robust, and easy to use, many of the advanced features relating to data and query management, visualizations, and modeling are only available via the Microsoft Power BI Desktop. 
+The Power BI Services Portal is both flexible and robust, and since it runs in a browser, it can be accessed from any computer. But if you're a Windows user, you have an even more powerful tool at your disposal: [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/). It includes advanced features the portal does not, especially when it comes to query management, visualizations, and modeling. In this exercise, you will use Power BI Desktop to connect to a database, create a table visualization, and add a computed column to the visualization.
 
-To install Microsoft Power BI Desktop:  
+1. In the Power BI Services Portal, click the **Download** icon in the top-right corner and select **Power BI Desktop**. (Alternatively, you can point your browser to https://powerbi.microsoft.com/en-us/desktop/ and click the **Download** button there to download and install Power BI Desktop.) Follow the onscreen instructions to install Power BI Desktop on your computer.
 
-1.	Open the Power BI Services Portal (if it’s not already open from Exercise 5) and **click** the **Download** icon in the top right portal menu, followed by **Power BI Desktop**.
-
-	![Downloading the Power BI Desktop](Images/portal-click-download-desktop.png)
+	![Downloading Power BI Desktop](Images/portal-click-download-desktop.png)
 	
-	_Downloading the Power BI Desktop_
+	_Downloading Power BI Desktop_
 	
-2.	When the download is complete, **run the installation** with the **default settings**.
-3.	Open Power BI Desktop and if asked to login, do so with your **Microsoft Office 365 Account**.
+1. Start Power BI Desktop. If you are asked to sign in, do so with your Microsoft Office 365 Account.
 
-As an advanced modeling activity create and include a Measure in a data visualization. To setup your data connection and create a new Measure:
+1. Click **Get Data** in the ribbon at the top, and then select **SQL Server**.
 
-1.	Locate the the **Home** ribbon, and **click** the **Get Data dropdown**, followed by **SQL Server**.
-
-	![Accessing Datasourses in Power BI Desktop](Images/desktop-get-data.png)
+	![Accessing data sourses in Power BI Desktop](Images/desktop-get-data.png)
 	
-	_Accessing Datasourses in Power BI Desktop_
+	_Accessing data sources in Power BI Desktop_
+
+1. Enter the values shown below in the "SQL Server Database" dialog. Then click the **OK** button.
+
+	![Connecting to the Adventure Works database](Images/desktop-connect-to-database.png)
 	
-2.	**Enter** the following values in the **SQL Server Database** dialog:
-	- Server: **powerbilabs.database.windows.net**
-	- Database: **powerbilabs**
-
-	![Entering Connection Credentials](Images/desktop-enter-data-credentials.png)
+	_Connecting to the Adventure Works database_
 	
-	_Entering Connection Credentials_
+1. If prompted for credentials, click **Database** on the left so you can provide database credentials rather than Windows credentials. Enter "PowerBILabUser" (without quotation marks) as the username and "PowerBI_1" (again without quotation marks) as the password. Then click **Connect** to connect to the Adventure Works database.
+
+	![Entering database credentials](Images/desktop-enter-credentials.png)
 	
-3.	**Click** **OK**.
-4.	If prompted for credentials, enter the following values:
-	- Username: **PowerBILabUser**
-	- Password: **PowerBI_1**
+	_Entering database credentials_
 
-5.	**Click** **OK**. Power BI will now authorize your credentials and connect to the Adventure Works database. When the Adventure Works data has been validated, the data Navigator dialog will be displayed.
+1. In the "Navigator" dialog, click **Customers** and **Products** to select the corresppnding tables, and then click **Select Related Tables**. Power BI will analyze the relationships in those tables and automatically select additional tables. Finish up by clicking **Load**.
 
-	![The Power BI Desktop Data Navigator](Images/desktop-data-navigator.png)
+	![Selecting tables and loading the dataset](Images/desktop-select-related-tables.png)
 	
-	_The Power BI Desktop Data Navigator_
+	_Selecting tables and loading the dataset_	
+
+1. Go to the "Visualizations" panel and click the **Table** icon to add a table visualization.
+
+	![Adding a table visualization](Images/desktop-select-table-visualization.png)
 	
-7.	In the **Navigator** dialog, select the **Customers** and **Products** tables, and then **click** **Select Related Tables**. Power BI will analyze the relationships in your data and automatically select additional tables based on the relationships found in Customers and Products.
+	_Adding a table visualization_	
 
-	![Selecting Related Tables](Images/desktop-select-related-tables.png)
+1.	To connect the table visualization to your data, go to the "Fields" panel and click  **Customers** to show the fields in the Customers table. Then click **CompanyName** to add the CompanyName field to the visualization.
+
+	![Adding CompanyName to the visualization](Images/desktop-adding-customer-fields.png)
 	
-	_Selecting Related Tables_	
-
-8.	**Click** **Load** to bring the selected data into the Power BI Desktop environment.
-
-	![Loading a Dataset](Images/desktop-load-dataset.png)
+	_Adding CompanyName to the visualization_	
 	
-	_Loading a Dataset_	
+1. Add the ProductID field from the Orders table, the OrderID field from Order Details, and the ProductName field from Products to the visualization. If needed, drag the handle on the right edge of the table visualization to expand it so you can see the added fields.
 
-9.	Locate the **Visualizations** panel and **click** the **Table Visualization** icon. An empty, disconnected Table tile will be created and displayed on the report designer workspace.
-
-	![Adding a Table Visualization](Images/desktop-select-table-visualization.png)
+	![Adding additional fields](Images/desktop-adding-additional-fields.png)
 	
-	_Adding a Table Visualization_	
+	_Adding additional fields_	
 
-10.	To connect the Table visualization to your data, locate the **Fields** panel and **click** the **Customers** element to expand and view the associated Fields for the Customers element.
-11.	**Select** the **CompanyName** field to display the associated data in the visualization.
-
-	![Adding Customer Fields](Images/desktop-adding-customer-fields.png)
-	
-	_Adding Customer Fields_	
-	
-	> Resize the visualization as needed, by dragging one of the directional handles located at the edges of the element, to better view the content.
-
-12.	Locate the **Order Details** entity and **select** **ProductID**.
-13.	Locate the **Orders** entity and **select** **OrderID**.
-14.	Locate the **Products** entity and **select** **ProductName**.	
-
-	![Adding Additional Fields](Images/desktop-adding-additional-fields.png)
-	
-	_Adding Additional Fields_	
-
-15.	**Click** the **Order Details** entity in the **Fields** panel.
+1. Click **Order Details** in the "Fields" panel.
 
 	![Selecting Order Details](Images/desktop-select-order-details-entity.png)
 	
 	_Selecting Order Details_	
 
-16.	On the **Home** ribbon, **click** **New Measure**. A formula input box will be displayed.
+1. Click **New Measure** in the ribbon at the top. A formula input box will be displayed.
 
-	![Creating a New Measure](Images/desktop-create-new-measure.png)
+	![Creating a new measure](Images/desktop-create-new-measure.png)
 	
-	_Creating a New Measure_	
+	_Creating a new measure_	
 
-17.	Enter the following DAX expression in the **input box** and **click** the **checkmark** to validate and save. A new column will become available in the Order Details entity named “Measure” calculating the average product price for a group of orders.
+1. Enter the following data-analysis expression (DAX) into the input box and click the check mark to left of it to validate and save the expression. A new column named "Measure" will appear under Order Details in the "Fields" panel representing the average product price for a group of orders.
 
 	```
-Measure = AVERAGE('Order Details'[UnitPrice])
+	Measure = AVERAGE('Order Details'[UnitPrice])
 	```
 
-18.	**Click** the **ellipse** (...) on the **Measure** column followed by **Rename**. Enter “AveragePrice” (without quotation marks) as the new value for your Measure.
+1. Place the mouse cursor over "Measure" in the "Fields" panel and click the ellipsis (**...**) that appears. Select **Rename** from the menu. Then type "AveragePrice" (without quotation marks) as the new name for the measure.
 	
-	![Selecting the New Measure](Images/desktop-select-measure.png)
+	![Renaming the measure](Images/desktop-rename-measure.png)
 	
-	_Selecting the New Measure_	
+	_Renaming the measure_	
 
+1. Click **AveragePrice** to add the average product price to the table visualization.
 	
-	![Renaming the New Measure](Images/desktop-rename-measure.png)
+	![Adding AveragePrice to the table visualization](Images/desktop-selecting-new-measure.png)
 	
-	_Renaming the New Measure_	
+	_Adding AveragePrice to the table visualization_	
 
-19.	**Select** the new **AveragePrice** column to display the average product price in your Table Visualization.
-	
-	![Selecting the Renamed Measure](Images/desktop-selecting-new-measure.png)
-	
-	_Selecting the Renamed Measure_	
+2. Click **Modeling** to display the Modeling ribbon. Then change the number of decimal places displayed to **2**. Observe how the AveragePrice column updates in the table visualization.
 
- 
-	> Improve the display of the new column by changing the decimal formatting of your AveragePrice Measure. To format the AveragePrice column in Power BI Desktop:
-
-1.	Locate the **Order Details** entity in the **Fields** panel and **click** the **AveragePrice** column.
-2.	On the **Modeling** ribbon, adjust the **decimal place** value to the number **2**. Observe the changes to the AveragePrice column in your Table Visualization.
-
-	![Formatting the New Measure Column](Images/desktop-view-decimal-format-change.png)
+	![Changing the number of decimal places](Images/desktop-view-decimal-format-change.png)
 	
-	_Formatting the New Measure Column_	
+	_Changing the number of decimal places_	
 	
-This exercise has prepared you with a solid foundation of core knowledge and experience required to continue into more advanced modeling scenarios, including extending Measures, Calculated Columns, and Calculated Tables.
+The ability to add measures to a model is just one of the ways in which Power BI Desktop extends what you can do with the Power BI Service Portal. Other features exclusive to Power BI Desktop include calculated columns and calculated tables. Feel free to play around with the model to experiment with these features and learn why Power BI Desktop is the tool of choice for most Power BI experts.
 
 <a name="Summary"></a>
 ## Summary ##
@@ -542,12 +509,12 @@ In this hands-on lab you learned how to:
 
 - Connect Power BI to business data
 - Visualize business data in a dashboard
-- Add visualization relationships
+- Add relationships to the visualizations you create
 - Enhance visualizations and reports with formatting
 - Publish and share Power BI content
-- Optionally, perform advanced data modeling techniques
+- Use Power BI Desktop to do advanced modeling
 
-This is just a beginning, as there’s a whole lot more you can do to leverage the power of Power BI. Start experimenting with other Power BI features, especially the Power BI Desktop, and identify other ways you can enhance your business intelligence through integrating Power BI into your processes.
+There is much more you can do to leverage the power of Power BI, but this is a start. Take time to experiment with other Power BI and Power BI Desktop features, and identify other ways you can enhance your business intelligence by integrating Power BI into your processes.
 
 ----
 
