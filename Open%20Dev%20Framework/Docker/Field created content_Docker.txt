@@ -1,6 +1,0 @@
-Related Field created content:
-
-Julien Corioland, TE France:
-HOL to get started with Docker containers on Windows:
-https://github.com/jcorioland/WindowsContainersHOL
-
