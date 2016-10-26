@@ -1,26 +1,20 @@
----
-title: 'DEMO 1.1: Exploring IoT Solutions'
----
+# DEMO 1.1: Exploring IoT Solutions
 
-Objective
-=========
+## Objective
 
 The goal is to demonstrate an IoT solution in action (that uses Azure IoT Hub, Stream Analytics & PowerBI) and that even smartphones can be IoT devices. You’ll have the audience point their smartphone browsers to a Web page, have them send telemetry to the cloud and WOW them with live data being displayed in charts.
 
-During this demo, there’s no need to show under the hood, understand the code or explain how the solution is built.
+During this demo, there’s no need to show under the hood, understand the code or explain how the [solution](#teardown) is built.
 
-Duration
-========
+## Duration
 
 This demo should take about 10 minutes.
 
-Requirements/Setup
-==================
+## Requirements/Setup
 
 You must follow the Setup 1 instructions before doing the demo.
 
-DEMO
-====
+## DEMO
 
 Explain to the attendees that they’ll use their smartphone as simulated devices that will send some fake telemetry to a cloud backend and the data will be displayed in charts live.
 
@@ -42,7 +36,7 @@ Let’s start the demo:
 
 2.  Give the URL to the attendees.
 
-    ![](./media/image1.png){width="6.5in" height="3.120138888888889in"}
+    <img src="./media/image1.png" width="624" height="299" />
 
 3.  Ask them to click on the Go to Demo 1 button.
 
@@ -50,11 +44,11 @@ Let’s start the demo:
 
 5.  Ask them to click on the toggle button and move the slider from time to time.
 
-    ![](./media/image2.png){width="6.5in" height="3.6875in"}
+    <img src="./media/image2.png" width="624" height="354" />
 
 6.  Show the Power BI dashboard and explain that the data is displayed in almost real time.
 
-    ![](./media/image3.png){width="6.5in" height="3.595138888888889in"}
+    <img src="./media/image3.png" width="624" height="345" />
 
 7.  Show the IoT Hub in the Azure Portal.
 
@@ -74,25 +68,24 @@ Let’s start the demo:
 
 2.  Select the line graph, drag the outtime field as the Axis, drag the avgtelemetry field as the Value and select Average from it’s dropdown menu.
 
-    ![](./media/image4.png){width="3.822438757655293in" height="5.645127952755906in"}
+    <img src="./media/image4.png" width="366" height="541" />
 
 3.  Drag the deviceid field as the Page level filter and select one of the device.
 
-    ![](./media/image5.png){width="1.6768733595800525in" height="2.4580260279965005in"}
+    <img src="./media/image5.png" width="160" height="235" />
 
 4.  If the device you’re looking for is not listed, select Advanced filtering, contains and the device name. Click Apply filter.
 
-    ![](./media/image6.png){width="1.781026902887139in" height="3.499562554680665in"}
+    <img src="./media/image6.png" width="170" height="335" />
 
 5.  Save and pin the report to the dashboard.
 
 6.  Ask the attendee you have this device to change the value from time to time.
 
-    ![](./media/image7.png){width="6.5in" height="4.720833333333333in"}
+    <img src="./media/image7.png" width="624" height="453" />
 
 7.  This concludes the demo.
 
-Teardown
-========
+## Teardown
 
-You’ll be reusing the same services in multiple demos for this session so don’t delete them yet. See Teardown 1 when you have finished the session.
+You’ll be reusing the same services in multiple <span id="wibble" class="anchor"></span>demos for this session so don’t delete them yet. See Teardown 1 when you have finished the session.
