@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Demo 2";
+}
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-xs-12 h4">
+        <p>Device ID: @ViewData["id"]</p>
+        <p>Device Key: @ViewData["key"]</p>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-xs-8">
+        <textarea id="txtComment" rows="2" cols="50" maxlength="100"></textarea><br />
+
+
+        <button type="button" class="btn btn-primary btn-lg " id="btnSend" data-loading-text="<i class='glyphicon glyphicon-refresh glyphicon-spin'></i> Thinking...">Analyze Text</button>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-xs-12">
+        <div id="results"></div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var deviceId = "@ViewData["id"]";
+        var deviceKey = "@ViewData["key"]";
+
+        //Disable the Send button in case we don't have a deviceID and deviceKey
+        $("#btnSend").prop("disabled", (deviceId == ""));
+
+        $('#btnSend').click(function () {
+            SendComment();
+        });
+
+        function SendComment() {
+            var _value = $("#txtComment").val();
+            $('#btnSend').button('loading');
+
+            $.ajax({
+                url: '/Home/SendComment/',
+                data: { id: deviceId, key: deviceKey, value: _value }
+            }).done(function (data) {
+                var res = data.comment + "<br />Detected language: " + data.language + "<br />Language score: " + data.languageScore + "<br />Sentiment: " + data.sentiment;
+                $("#results").html(res);
+                $('#btnSend').button('reset');
+            }).fail(function (jqXHR, textStatus) {
+                $("#results").html("An error occured");
+                $('#btnSend').button('reset');
+            });
+
+
+
+        }
+    });
+</script>
