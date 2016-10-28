@@ -52,6 +52,7 @@ Estimated time to complete this lab: **60** minutes.
 The first step in working with Azure SQL is to create an Azure SQL database as the location for your data. In this exercise you will create an Azure SQL database and configure your Azure SQL server settings.
 
 1. Open the Azure Management Portal, if asked to login, do so with your Microsoft Account.
+
 1. Click **+ New**, followed by **Database** and **SQL Database**.
 
     ![Creating a new Azure SQL database](Images/portal-select-new-azure-sql.png)
@@ -63,6 +64,7 @@ The first step in working with Azure SQL is to create an Azure SQL database as t
 	>Using the name **Northwind** for your database is required for the exercises in this lab.
 
 1. Under **Resource Group** select **Create New**, enter a Resource Group name such as "TrainingLabResources”, leaving the Select source as the default **Blank database**. 
+
 1. Click the **Server** panel to open the Azure SQL Server blade. Your Azure SQL database needs to be connected with a Server instance for administration purposes.
 
     ![Creating a new Azure SQL database](Images/portal-select-server-blade.png)
@@ -74,6 +76,7 @@ The first step in working with Azure SQL is to create an Azure SQL database as t
 	>Azure SQL database names can be 3 to 24 characters in length and can only contain numbers, lowercase letters, and a limited set of special characters. In addition, the name you enter must be unique within Azure. If someone else has chosen the same name, you'll be notified that the name isn't available with a red exclamation mark in the **Server name** field.
 	
 1. Enter "trainingadmin” in the **Server admin login** entry, as well as "Password_1” in both the **Password** and **Confirm password** fields.
+
 1. Select the location nearest you, and leave the **Create V12 server** set to **Yes** as well as the **Allow azure services to access server** selection **checked**, and click **Create**. 
  
     ![Configuring a new Azure SQL server](Images/portal-create-new-server.png)
@@ -91,15 +94,18 @@ The first step in working with Azure SQL is to create an Azure SQL database as t
 The Azure Portal will redirect you to the Azure Portal Dashboard while it provisions your Azure SQL server and database. It typically takes around one to three to fully provision a new Azure SQL server and database. To monitor provisioning of your database from the Azure Portal:
 
 1. Click the **“hamburger”** icon in the Azure Portal to open the side drawer
+
 1. Click **Resource Groups** followed by **TrainingLabResources**.
+
 1. Select the **Overview** tab.
+
 1. Review the **Last deployment** label and watch for the status to change from “Deploying” to “Succeeded”, at which time your Azure SQL server and database have been successfully provisioned.
  
     ![Resource Group deployment status](Images/portal-resource-deployment-status.png)
 
     _Resource Group deployment status_	
 
-	>You may need to refresh the page in your browser from time to time to see the most recent deployment status changes.
+	> You may need to refresh the page in your browser from time to time to see the most recent deployment status changes.
 
 Your Azure SQL database is now provisioned and you’re ready to start populating it with records. To get familiar with running scripts and populating records through Visual Studio 2015, you will be using the SQL Server Data Tools from within Visual Studio.
 
@@ -111,8 +117,11 @@ Now that you’ve created an Azure SQL database, it’s time to populate your da
 Once you have confirmed the SQL Server Data Tools have been added to Visual Studio, you can open your Azure SQL database easily through the Azure Portal. To open your database in SSDT:
 
 1. Open the Azure Portal dashboard (if it’s not already open from Exercise 1) and click the **“hamburger”** icon to open the side drawer menu.
+
 1. Click **Resource Groups** followed by **TrainingLabResources**.
+
 1. Select the **Overview** tab.
+
 1. Click **Northwind** to open your newly provisioned Azure SQL database.
  
     ![Selecting the Northwind database](Images/portal-select-northwind-database.png)
@@ -134,12 +143,12 @@ Once you have confirmed the SQL Server Data Tools have been added to Visual Stud
     _The Visual Studio Connect dialog_	
 
 1. The "Create new firewall rule" dialog will display, prompting to allow local firewall access between your local computer and your Azure SQL database. Review the default settings and click **OK**. Visual Studio will now load your database in the SQL Server Object Explorer (SSOE) and begin populating database information.
-2. 
+
     ![The Visual Studio Firewall rule dialog](Images/vs-firewall-rule-dialog.png)
 
     _The Visual Studio Firewall rule dialog_	
 
-	>If prompted to login to the portal do so with your Microsoft account.
+	 >If prompted to login to the portal do so with your Microsoft account.
 
 1. Right-click over the **newly added server mode** displaying the full path of your new Azure SQL database server (such as traininglab01.database.windows.net) in the SSOE and select **New Query…** after which a new query script window will open in the main content panel of your environment.
  
@@ -178,6 +187,7 @@ Once you have confirmed the SQL Server Data Tools have been added to Visual Stud
     _Selecting the New Query command_	
 
 1. From the Visual Studio menu select **Edit > Insert File as Text** and browse to the** Resources > Scripts** folder included with this lab.
+
 1. Select the **Create NORTHWIND tables.sql** script and click **Open**.
  
     ![Opening the Create NORTHWIND tables script](Images/vs-select-create-script.png)
@@ -199,6 +209,7 @@ Once you have confirmed the SQL Server Data Tools have been added to Visual Stud
 At this point your Azure SQL database has been configured and populated with the data necessary for the remaining exercises. Before moving to the next exercise, it may be helpful to familiarize yourself with some of the objects created in the previous steps. To review some of the tables created:
 
 1. Expand the **Northwind** node in the SSOE, and then expand the **Tables** node. The Tables node should now have a list of tables available, populated with customer, product, and order records.
+
 1. Right-click over the **Customers** table and select **View Data** to view employee records.
  
     ![Selecting the View Data command_](Images/vs-select-view-data.png)
@@ -226,7 +237,9 @@ In most modern app development scenarios data is stored remotely, either in an o
 To create an Azure API App to access data:
 
 1. Start Visual Studio 2015, or return to it if Visual Studio is still open from the previous exercise.
+
 1. In the Visual Studio menu click **File > New > Project** and select the **ASP.NET Web Application** template.
+
 1. Enter “OrderViewServices” (without the quotes) as the **project name**, and click **OK**.
  
     ![Creating a new web project](Images/vs-create-new-web-project.png)
@@ -268,6 +281,7 @@ To connect an Entity Framework model to your Azure SQL database:
     _Adding a new folder_		 
 
 1. Right-click over your new **Data** folder and select **Add > New Item**. 
+
 1. In the "Add New Item" dialog select **Data > ADO.NET Entity Data Model**, and enter the value “OrdersModel” in the **Name** field.
  
     ![Adding the OrdersModel](Images/vs-add-orders-model.png)
@@ -275,6 +289,7 @@ To connect an Entity Framework model to your Azure SQL database:
     _Adding the OrdersModel_		 
 
 1. Click the **Add** button to view the Entity Data Model Wizard.
+
 1. Select **EF Designer from database** and click **Next**. The "Connection" dialog will appear, prompting you to enter a database connection.
  
     ![Selecting the EF Designer](Images/vs-select-ef-designer.png)
@@ -291,7 +306,8 @@ To connect an Entity Framework model to your Azure SQL database:
  
 	>This will be the same server name value displayed in the SQL Server Object Explorer in the previous exercise.
 	
-1. Change the **Authentication type** to **SQL Server Authentication**, and enter “trainingadmin” in the **User name** box, as well as “Password_1” in the **Password** box. You will now be able to select a database.
+1. Change the **Authentication type** to **SQL Server Authentication**, and enter "trainingadmin" in the **User name** box, as well as “Password_1” in the **Password** box. You will now be able to select a database.
+
 1. Select **Northwind** in the **Select or enter a database name** list, and click **OK**. You will be redirected back to the original dialog and your connection string property will be displayed in the **Connection string** window.
  
     ![Setting connection properties](Images/vs-setting-connection-properties.png)
@@ -299,6 +315,7 @@ To connect an Entity Framework model to your Azure SQL database:
     _Setting connection properties_	
 	
 1. Select **No, exclude sensitive data from the connection string. I will set it in my application code**. Selecting this option will remove any password information from your Web.config file. 
+
 1. Click **Next** to proceed to the "Entity Framework version" dialog, Leave the default of Entity Framework 6.x and click **Next**.
  
     ![Setting connection properties](Images/vs-setting-connection-security.png)
@@ -326,6 +343,7 @@ To connect an Entity Framework model to your Azure SQL database:
 Now you’re ready to start writing code to access the data models you created, to add data access logic:
 
 1. In the Solution Explorer, right-click the **Models** folder and select **Add -> Class**.
+
 1. Type "OrderInformation.cs" (without quotation marks) into the **Name** box, and then click **OK**.
 
     ![Creating a new class file](Images/vs-add-class-to-models.png)
@@ -415,6 +433,7 @@ Now you’re ready to start writing code to access the data models you created, 
     _The new Helpers folder_		 
 
 1. Right-click the new **Helpers** folder and select **Add -> Class**.
+
 1. Type "OrderHelper.cs" (without quotation marks) into the **Name** box, and then click **OK**.
  
     ![Adding the OrderHelper class](Images/vs-add-orderhelper-class.png)
@@ -531,6 +550,7 @@ Now you’re ready to start writing code to access the data models you created, 
     _The new Extensions folder_	
 
 1. Right-click the new **Extensions** folder and select **Add -> Class**.
+
 1. Type "ListExtensions.cs" (without quotation marks) into the **Name** box, and then click **OK**.
 
     ![Adding the ListExtensions class](Images/vs-adding-listextensions-class.png)
@@ -634,6 +654,7 @@ Now you’re ready to start writing code to access the data models you created, 
 	```
 
 1. In the Solution Explorer, right-click the **Controllers** folder and select **Add -> Controller**.
+
 1. Select the** Web API 2 Controller – Empty** template and click **Add**, and then type "OrdersController" in the name box and click **Add**. A new API controller will be added to your project.
  
     ![Adding a new controller](Images/vs-add-new-controller.png)
@@ -675,7 +696,7 @@ Now you’re ready to start writing code to access the data models you created, 
         }
 ```
 
-	>These API controller methods will provide REST-based methods for accessing order information from other apps and services.
+	> These API controller methods will provide REST-based methods for accessing order information from other apps and services.
 
 All the code, classes, and models have now been written, and you can validate access to customer, product and order information to see the how data will be returned from your API App.
 
@@ -696,6 +717,7 @@ To validate access to your Azure SQL data:
 Up to now, you have been running the API app locally. Web Deploy makes it incredibly easy to publish to the Web without having to FTP up a bunch of files. You will be deploying the Azure API App to the Azure App Service that was created when you created the project in Visual Studio. (Remember that **Host in the cloud** box you checked? If not, refer to Step 4.)
 
 1. Right-click the project in Solution Explorer and select **Publish...** from the context menu.
+
 1. In the ensuing dialog, make sure **Web Deploy** is selected as the **Publish method**. Then click the **Publish** button.
  
     ![Publishing your API app](Images/vs-publish-api-app.png)
@@ -771,6 +793,7 @@ The shell for your application has been created successfully, now it’s time to
     _The new Common folder_  
 
 1. Right-click the new **Common** folder and select **Add -> Class**.
+
 1. Type "BindableBase.cs" (without quotation marks) into the **Name** box, and then click **OK**.
  
     ![Adding the BindableBase class](Images/vs-adding-bindablebase-class.png)
@@ -844,6 +867,7 @@ The shell for your application has been created successfully, now it’s time to
     _Adding the Models folder_  
 
 1. Right-click the new **Models** folder and select **Add -> Class**.
+
 1. Type "OrderInformation.cs" (without quotation marks) into the **Name** box, and then click **OK**.
  
     ![Adding the OrderInformation class](Images/vs-new-orderinfomation-class.png)
@@ -941,6 +965,7 @@ The shell for your application has been created successfully, now it’s time to
 	>Just as in the previous exercise, these class definitions will provide the model for your customer, product, and order data.
 
 1. Right-click once more over the **Models** folder and select **Add -> Class**.
+
 1. Type "MainViewModel.cs" (without quotation marks) into the **Name** box, and then click **OK**.
  
     ![Adding the MainViewModel class](Images/vs-add-mainviewmodel-class.png)
@@ -1071,6 +1096,7 @@ The shell for your application has been created successfully, now it’s time to
     _The new Helpers folder_  
 
 1. Right-click the new **Helpers** folder and select **Add -> Class**.
+
 1. Type "OrderHelper.cs" (without quotation marks) into the **Name** box, and then click **OK**.
  
     ![Creating the OrderHelper class](Images/vs-new-orderhelper-class.png)
@@ -1350,7 +1376,7 @@ To add row-level security to your Azure SQL database:
 
     _Selecting the Insert File as Text command_	
 
-2. Select the **Apply NORTHWIND security.sql** script and click **Open**.
+1. Select the **Apply NORTHWIND security.sql** script and click **Open**.
  
     ![Opening the Apply NORTHWIND security script](Images/vs-select-security-script.png)
 
@@ -1373,8 +1399,11 @@ Now let’s make sure customer phone numbers are hidden from users accessing you
 To add dynamic data masking to your Azure SQL database we need to go back to the Azure Portal:
 
 1. Open the Azure Management Portal, if asked to login, do so with your Microsoft Account.
+
 1. Click the **“hamburger”** icon in the Azure Portal to open the side drawer.
+
 1. Click **Resource Groups** followed by **TrainingLabResources**.
+
 1. Click the **Northwind** database created in Exercise 1 to view database properties.	
  
 	![Selecting the Northwind database](Images/portal-select-northwind-database.png)
@@ -1396,7 +1425,9 @@ To add dynamic data masking to your Azure SQL database we need to go back to the
 	This mask would meet the requirements; however, it gives the impression this value contains a date. Let’s change the mask to something more appropriate.
 
 1. Click the new **dbo_Customers_Phone** mask to open the **Edit Masking Rule** panel.
-1. Select **Custom string** from the **Masking field format** selection list, and then enter “xxxxxxx” (without the quotation marks) in the **Padding String** box.
+
+1. Select **Custom string** from the **Masking field format** selection list, and then enter "xxxxxxx" (without the quotation marks) in the **Padding String** box.
+
 1. Click **Update** in the **Edit Masking Rule** menu, and the **Save** in the** Dynamic data masking** panel. Dynamic data masking has now been added to your Azure SQL database.
  
 	![Updating the customer phone mask](Images/portal-update-customer-mask.png)
@@ -1410,6 +1441,7 @@ To add dynamic data masking to your Azure SQL database we need to go back to the
 To view and verify row-level security and dynamic data masking, let’s go back to the OrderView app and review how orders are returned when we select different Salespersons. 
 
 1. Use Visual Studio's **Debug -> Start Without Debugging** command (or simply press **Ctrl+F5**) to launch the application on your computer.
+
 1. When the app loads, notice how the selected salesperson (Janet, as Sales Manager) is able to view records from multiple employees.
  
 	![Viewing Sales Manager row-level security in the app](Images/app-manager-selected.png)
