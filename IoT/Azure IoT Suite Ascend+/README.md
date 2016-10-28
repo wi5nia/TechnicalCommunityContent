@@ -1,4 +1,6 @@
-# Ascend+ Community Content README #
+IN PROGRESS
+
+# Ascend+ Community Content - Azure IoT Suite#
 
 Each sub-folder provides content for one session.  
 
