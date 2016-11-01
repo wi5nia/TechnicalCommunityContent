@@ -1,0 +1,63 @@
+﻿@import "spinners";
+
+.chart {
+    margin: 0;
+}
+
+.chart-airplane {
+    width: 100%;
+    height: 600px;
+
+    .chart-airplane-outline {
+        stroke: black;
+        stroke-width: 40;
+    }
+
+    .chart-airplane-fuselage {
+        fill: none;
+    }
+
+    .chart-airplane-label {
+        fill: #373435;
+        font-weight: 300;
+        font-size: 3604.05px;
+        font-family: 'Segoe UI Light';
+    }
+
+    .chart-airplane-engine1 {
+        fill: transparent;
+    }
+
+    .chart-airplane-engine2 {
+        fill: transparent;
+    }
+
+    .chart-airplane-engine-warning {
+        fill: #ffce00;
+    }
+}
+
+.chart-linechart {
+    height: 150px;
+}
+
+.chart-container {
+    padding: 10px;
+}
+
+
+.chart-indicator-progress {
+    &::before {
+        .spinner();
+        content: ' ';
+        font-size: 3em;
+        display: inline-block;
+        position: absolute;
+        top: calc(~'50% - 0.5em');
+        left: calc(~'50% - 0.5em');
+    }
+}
+
+.chart-indicator-danger {
+
+}

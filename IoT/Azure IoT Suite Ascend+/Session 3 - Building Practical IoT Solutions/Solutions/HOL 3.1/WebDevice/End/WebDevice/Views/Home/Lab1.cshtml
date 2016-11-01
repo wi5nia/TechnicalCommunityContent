@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Lab 1";
+}
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-xs-12 h4">
+        <p>Device ID: @ViewData["id"]</p>
+        <p>Device Key: @ViewData["key"]</p>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-xs-2">
+        <input id="onOff" type="checkbox" data-toggle="toggle">
+    </div>
+    <div class="col-xs-8">
+        <div id="sliderTelemetry"></div>
+    </div>
+    <div class="col-xs-2">
+        <div id="telemetryValue" class="h4"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+        <div class="table-responsive">
+            <table id="datagrid" class="table">
+                <thead>
+                    <tr>
+                        <th>Time Sent</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>       
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var deviceId = "@ViewData["id"]";
+        var deviceKey = "@ViewData["key"]";
+        var repeat;
+        var initivalValue = Math.floor((Math.random() * 100) + 1);
+
+        $("#sliderTelemetry").slider({
+            max: 100,
+            min: 0,
+            orientation: "horizontal",
+            value: initivalValue,
+            slide: function (event, ui) { $('#telemetryValue').html(ui.value); }
+        });
+
+        $('#telemetryValue').html(initivalValue);
+
+        //Disable the Start button in case we don't have a deviceID and deviceKey
+        $("#onOff").prop("disabled", (deviceId == ""));
+
+        $('#onOff').change(function () {
+            if ($('#onOff').prop('checked')) {
+                repeat = setInterval(SendMessage, 2000);
+            }
+            else {
+                clearInterval(repeat);
+            }
+        });
+
+        function SendMessage() {
+            var d = new Date();
+            var _date = d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
+
+            var _value = $("#sliderTelemetry").slider("value");
+
+            $.ajax({
+                url: '/Home/SendMessage/',
+                data: { id: deviceId, key: deviceKey, value: _value }
+            }).done(function () {
+                $('#datagrid tbody').prepend('<tr><td>' + _date + '</td><td>' + _value + '</td></tr>');              
+            }).fail(function (jqXHR, textStatus) {
+                alert(textStatus);
+            });
+        }
+    });
+</script>

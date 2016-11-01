@@ -1,0 +1,70 @@
+﻿@import "variables.less";
+@import "bootstrap/variables.less";
+@import "animations.less";
+@import "spinners.less";
+
+
+.indicator-bar {
+    text-align: center;
+    line-height: 2em;
+    margin: 0 -10px;
+}
+
+.indicator-bar-progress {
+    .animation-running-stripes();
+    color: @brand-success-invert;
+}
+
+.indicator-bar-inactive {
+    background-color: @brand-inactive;
+    color: @brand-inactive-invert;
+}
+
+.indicator-bar-success {
+    background-color: @brand-success;
+    color: @brand-success-invert;
+}
+
+.indicator-background-based {
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin: 0;
+}
+
+
+.indicator {
+    padding-left: 20px;
+    min-height: 20px;
+}
+
+.indicator-progress {
+    &::before {
+        .spinner();
+        content: ' ';
+        font-size: 1em;
+        margin: 3px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        margin-left: -20px;
+    }
+}
+
+.indicator-background-based {
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin: 0;
+}
+
+.indicator-warning {
+    .indicator-background-based();
+    background-image: url(/styles/img/icon-exclamation.svg);
+}
+
+.indicator-danger {
+    .indicator-background-based();
+    background-image: url(/styles/img/icon-error.svg);
+}

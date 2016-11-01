@@ -1,0 +1,111 @@
+﻿@using Microsoft.Azure.Devices.Applications.PredictiveMaintenance.Web.App_GlobalResources
+@model Microsoft.Azure.Devices.Applications.PredictiveMaintenance.Web.ViewModels.IndexModel
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>@Resources.PageTitle</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="~/styles/img/favicon.ico"/>
+
+    @Styles.Render("~/bundle/styles/")
+    @Scripts.Render("~/bundle/scripts/")
+</head>
+
+<body class="layout layout-expand">
+<div class="layout-row">
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">@Resources.PageTitle</a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#accountMenu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="accountMenu" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="language-icon"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="account-menu">
+                                @foreach (var language in Model.AvailableLanguages)
+                                {
+                                    if (language.Name == Model.CurrentLanguageName)
+                                    {
+                                        <li role="presentation" class="active">
+                                            <a>@language.Name</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li role="presentation">
+                                            <a href="@Url.Action("SetCulture", "Home", new { cultureName = language.CultureName})">@language.Name</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </li>
+                        <li class="dropdown account-dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="account-avatar"></span>
+                                <span class="account">
+                                    <span class="account-name">@Model.Username</span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu account-menu" role="menu" aria-labelledby="account-menu">
+                                <li role="presentation">
+                                    <a href="@Url.Action("SignOut", "Account")" role="menuitem">@Resources.LinkLabelSignOut</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li role="presentation">
+                                    <a href="https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade" target="_blank" role="menuitem">@Resources.LinkLabelHelpAndSupport</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="http://feedback.azure.com/forums/321918-azure-iot" target="_blank" role="menuitem">@Resources.LinkLabelHelpGiveFeedback</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <messages data-bind="foreach: errorMessages()">
+            <div class="alert alert-danger">
+                <span class="indicator indicator-danger" data-bind="text: $data"></span>
+                <button class="btn btn-close" aria-label="Close error message" data-bind="click: $root.closeMessage">
+                    <span aria-hidden="true"></span></button>
+            </div>
+        </messages>
+    </header>
+</div>
+<div class="layout-row">
+    <div class="layout-cell layout-expand">
+        <div class="layout">
+            <div class="layout-row">
+                <div class="layout-cell">
+                    <div class="layout-cell-content aside-nav">
+                        <nav>
+                            <a class="nav_dashboard selected">
+                                @Resources.LinkLabelDashboard
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="layout-cell layout-expand">
+                    <div class="layout-cell-content">
+                        <main class="layout-cell-content-fit">
+                            @RenderBody()
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

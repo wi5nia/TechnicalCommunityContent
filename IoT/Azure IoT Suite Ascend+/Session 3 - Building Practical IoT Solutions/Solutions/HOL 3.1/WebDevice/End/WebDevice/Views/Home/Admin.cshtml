@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Admin";
+}
+<h2>@ViewBag.Title</h2>
+
+
+<button type="button" class="btn btn-danger" id="btnDeleteAllDevices" >
+    Delete all devices
+</button>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#btnDeleteAllDevices").click(function () {
+            $.ajax({
+                url: '/Home/DeleteAllDevices/'
+            }).done(function () {
+                alert('All devices are deleted');
+            }).fail(function (jqXHR, textStatus) {
+                alert('Something went wrong');
+            });
+        });
+    });
+</script>
