@@ -3,7 +3,7 @@
 ### Duration
 This demo should take ~ 5 minutes
 
-### Objectives
+### Goal
 Introduction and high-level overview of the components used and how they relate to the 7 core DevOps principals. 
 
 ### Prerequisites
@@ -13,17 +13,16 @@ Introduction and high-level overview of the components used and how they relate 
 
 # Demo
 
-## Explain what Parts Unlimited MRP is
+## Explain what Parts Unlimited is
 
-0.  Browse to the Parts Unlimited MRP site in the dev environment: `http://{YourURL}:9080/mrp`
+0.  Browse to the Parts Unlimited MRP site in the dev environment: `http://{YourDNSname}:9080/mrp`
+The MRP Url was shown in the output of the script used in the setup process.
 
-The YourUrl was shown during setup as the MRP url
+    > Parts Unlimited is a fictional organization that sells car parts online. Their business relies on two key applications: a new ASP.NET vNext e-commerce website and an Java-based outsourced Manufacturing Resource Planning (MRP) application. The scenario and e-commerce site is based on the website described in chapters 31-35 of The Phoenix Project, by Gene Kim, Kevin Behr and George Spafford, © 2013 IT Revolution Press LLC, Portland, OR. Resemblance to “Project Unicorn” in the novel is intentional; resemblance to any real company is purely coincidental.
 
-    > Parts Unlimited is a fictional organization that sells car parts online. Their business relies on two key applications: a new ASP.NET vNext e-commerce website and a Java-based outsourced Manufacturing Resource Planning (MRP) application. The scenario and e-commerce site is based on the website described in chapters 31-35 of The Phoenix Project, by Gene Kim, Kevin Behr and George Spafford, © 2013 IT Revolution Press LLC, Portland, OR. Resemblance to “Project Unicorn” in the novel is intentional; resemblance to any real company is purely coincidental.
+    > Today we will use the MRP application to show you how DevOps can help you deliver value & your code with more confidence.
 
-    > Today we will use the MRP application to present to you how DevOps can help you deliver value & your code with more confidence.
-
-    > The MRP application is written in Java and runs on a Linux machine hosted on Microsoft Azure. Let's take a look at its infrastructure in the cloud.
+    > The application is written in Java and runs on a Linux machine hosted on Microsoft Azure. Let's take a look at its infrastructure in the cloud.
 
 0. Open the Microsoft Azure portal at https://portal.azure.com
 0. Browse to your Azure subscription and browse to the **PartsUnlimitedMRP-dev** resource group
@@ -31,7 +30,7 @@ The YourUrl was shown during setup as the MRP url
     ![](<media/browse_dev_rg_azure_portal.png>)
 0. In the overview pane, show the Linux Virtual machine
 
-    > The Linux machine is the host of a few components, MongoDB for the data & Apache Tomcat for the web.
+    > The Linux machine is the host of a few components - MongoDB for the data & Apache Tomcat for the web.
 
 0. Open the folder .\src in your local repository and explain the folder structure
 
@@ -50,7 +49,7 @@ The YourUrl was shown during setup as the MRP url
 ## Open your Parts Unlimited MRP VSTS project homepage
 Browse to `https://<your-vsts-account>.visualstudio.com/PartsUnlimitedMRP`
 
-## Explain how DevOps principles matche in the case of Parts Unlimited MRP
+## Explain how DevOps principles match in the case of Parts Unlimited MRP
 
 ### Infrastructure as Code & Configuration Management
 Open the file `./docs/Sessions/SETUP_Continuous-Deployment/env/ContinuousDeploymentPartsUnlimitedMRP.json`
@@ -64,7 +63,7 @@ Open the file `./docs/Sessions/SETUP_Continuous-Deployment/env/ContinuousDeploym
     that will configure the machine by installing, without human intervention,
     Apache Tomcat & MongoDB just to name a few.
 
-#### Other well-known tools for IaC:
+#### Other well-known IaC tools:
 * Chef
 * Puppet
 * Terraform
@@ -76,7 +75,7 @@ Open the file `./docs/Sessions/SETUP_Continuous-Deployment/env/ContinuousDeploym
 Click the **Build** tab in VSTS
 
     A continuous integration build will give us the ability to automate whether the code
-    we checked in can compile and will successfully pass any automated tests that we
+    we checked in can compile and whether it successfully passes any automated tests that we
     have created against it. By using an automated build pipeline, we can quickly validate if 
     our code changes have "broken the build" and fix code before it gets to production.
 
@@ -86,30 +85,30 @@ Click the **Build** tab in VSTS
 
     ![](<media/ci_build_trigger.png>)
 -->
-#### Other well-known tools for Build/CI:
+#### Other well-known build/CI tools:
 * Jenkins
 * Travis CI
 * Team City
 * Cruise Control
 
 -------------------------------------------------------------------------------
-### Automated Testing // aka Continous Testing
+### Automated Testing // aka Continuous Testing
 Click the **Build** tab in VSTS
 
-    Visual Studio Team Services include build tasks to make it easy to integrate your build and 
+    Visual Studio Team Services includes build tasks to make it easy to integrate your build and 
     testing efforts into your release pipelines with rich reporting highlighting build-on-build changes,
     easy-to-create actionable bugs for regressions and the ability to create and display code coverage 
     with a simple checkbox.
 
     In MRP, Automated Testing is performed by executing JUnit tests during the CI build but you could go 
-    way further than that, executing UI tests, load tests, etc.
+    way further than that by executing UI tests, load tests, etc.
 
 <!--    
     VSTS Build Definition executing *JUnit Tests* - [more doc here](https://www.visualstudio.com/en-us/docs/test/continuous-testing/getting-started/continuous-test-java)
 
     ![](<media/automated_testing.png>)
 -->
-#### Other well-known tools for Automated Testing:
+#### Other well-known automated testing tools:
 * Selenium
 * Cucumber
 * JUnit 
@@ -120,7 +119,7 @@ Click the **Build** tab in VSTS
 ### Continuous Deployment & Release Management
 Click the **Release** tab in VSTS
 
-    Continous Deployment & Release Management helps you automate the deployment and testing of 
+    Continuous Deployment & Release Management help you automate the deployment and testing of 
     your software in multiple environments. You can either fully automate the delivery of your 
     software all the way to production, or set up semi-automated processes with approval 
     and on-demand deployments.
@@ -129,7 +128,7 @@ Click the **Release** tab in VSTS
     to your customers at a faster pace and with lower risk.
     
     In MRP,
-        Continous Deployment is done using a deployment build with a trigger set on a CI build.
+        Continuous Deployment is done using a deployment build with a trigger set on a CI build.
     
         Release Management is achieved using the release tracking & the approval that exists for 
         the deployment between the dev & production environments.
@@ -174,7 +173,7 @@ Click the **Release** tab in VSTS
 <!--
     * Application Insight integrated with Java - [more doc here](https://azure.microsoft.com/en-us/documentation/articles/app-insights-java-get-started/)
 -->
-#### Other well-known tools for APM:
+#### Other well-known APM tools:
 * New Relic
 * Splunk
 

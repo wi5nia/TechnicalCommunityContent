@@ -34,7 +34,7 @@ Browse to `https://<your-vsts-account>.visualstudio.com/PartsUnlimitedMRP`
 
 * At the homepage of the PartsUnlimitedMRP team project in Visual Studio Team Services, click on the **Work** tab in the upper-left corner of the page.
  
-> To do so, you will make your changes in a new branch to isolate your changes. It is a good practice to do so, 
+> To do so, you will make your changes in a new branch to isolate your changes. It is a good practice to do so; 
  that way you can enforce pull requests and perform code reviews before you merge your changes back in your source branch.
 
 * Click the ellipsis on the right of the work item titled *Change Clients web site titles* and choose **New Branch...**.
@@ -53,7 +53,7 @@ Browse to `https://<your-vsts-account>.visualstudio.com/PartsUnlimitedMRP`
 
 > We will now clone the repository on our machine using the clone url we just copied.
 
-*In a command prompt*, create a new directory for our repository
+*In a command prompt*, create a directory for our repository
 
 Clone the **PartsUnlimitedMRP** git repository onto your local machine, open your command-line tool and type :
 
@@ -64,9 +64,9 @@ Clone the **PartsUnlimitedMRP** git repository onto your local machine, open you
 ## Work in Visual Studio CODE
 * Open up Visual Studio code
 
-> Visual Studio CODE is a multi-platform, open source editor. We will come back to it a bit later when the build process will be busy building our changes.
+> Visual Studio CODE is multi-platform, open source editor. We will come back to it a bit later when the build process is busy building our changes.
 
-* Open Your repository folder
+* Open the repository folder containing the copy of the repository you just cloned
  
  ![](<media/open_repo_folder_vscode.png>)
 
@@ -104,7 +104,7 @@ Clone the **PartsUnlimitedMRP** git repository onto your local machine, open you
 
 > We will create a pull request for this change in VSTS.
 
-*  Go back to VSTS and browse the **CODE** tab, ensure you are on the `feature/title-change` branch, then click **Create a pull request**.
+*  Go back to VSTS and browse the **CODE** tab; ensure you are on the `feature/title-change` branch, then click **Create a pull request**.
 
  ![](<media/create_pull_request.png>)
 
@@ -116,7 +116,8 @@ Clone the **PartsUnlimitedMRP** git repository onto your local machine, open you
 
  ![](<media/new_pull_request_dialog.png>)
 
-> For the sake of the demo and because we are not many people, we will approve and complete the PR ourselves. In real life, one or more people on your team would do this.
+> For the sake of the demo and because we are not many people, we will approve and complete the PR ourselves. In real life, one or more people 
+on your team would do this.
 
 * Click the **Approve** button, then the **Complete** button.
 
@@ -132,7 +133,7 @@ Clone the **PartsUnlimitedMRP** git repository onto your local machine, open you
 
 **[the build will take ~3 minutes to complete]**
 
-* Go back to VS CODE and to show the audience around the tool
+* Go back to VS CODE and to show the tool around
 
  ![](<media/vscode_overview.png>)
 
@@ -140,19 +141,19 @@ Clone the **PartsUnlimitedMRP** git repository onto your local machine, open you
   
 	Search:		Enable you to perform text search on files using simple pattern or regular expressions
   
-	Git:		Enable you to perform several Git related commands, we already saw that we performed a commit & push
+	Git:		Enables you to perform several Git related commands; we already saw that when we performed a commit & push
      			but you can, perform pull, rebase, undo last commit, etc.
 
 	Debug:		Like the name says, you can debug JavaScript, node.js and many other things in there
 
-	Extensions:	VS CODE is a great tool that have a lot of extensions for things that are not out of the box.
+	Extensions:	VS CODE is a great tool that has a lot of extensions for things that are not out of the box.
      This is where you will install, enable, disable, uninstall your extensions. 
-     An example of extension you can find is the Azure Resource Manager Template extension 
+     An example of extensions you can find is the Azure Resource Manager Template extension 
      which gives you intellisense when you edit your JSON files as part of your Infrastructure as Code (IaC) preparation.
 
-* Go back to VSTS and show progress in the build
+* Go back to VSTS and show progress of the build
 
-> The Continuous deployment & Release management principles of DevOps are done in the **Release** tab in VSTS
+> The Continuous deployment & Release management principles of DevOps is done in the **Release** tab in VSTS
 
 * Go to the **Release** tab and note the running deployment that was queued by the Continuous Deployment trigger. 
 
@@ -176,10 +177,10 @@ Clone the **PartsUnlimitedMRP** git repository onto your local machine, open you
   ![](<media/azure_portal_copy_dev_machine_dns.png>)
 
 
-> The title of the page have changed and we are satisfied but let's pretend for one minute that it was not the case...
+> The title of the page has changed and we are satisfied but let's pretend for one minute that it was not the case...
 > The approver always has the option to stop the propagation of a release to other environments by *rejecting* the release. 
 
-* Paste what you have copied into the address bar of a new browser window. Keep only the DNS name, not the IP address if it is present, at the end the URL 
+* Paste what you have copied into the address bar of a new browser window. Keep only the DNS name, not the IP address if it is present, at the end; the URL 
 should look like something like this: `http://mylinuxvm-dev.westus.cloudapp.azure.com:9080/mrp`.
 
  ![](<media/release_deployed_to_dev_env.png>)
@@ -208,6 +209,12 @@ should look like something like this: `http://mylinuxvm-dev.westus.cloudapp.azur
 
 ## Teardown
 If you don't intend to perform another session in this series, you can delete the resources for the dev & prod environments in Azure. Execute `/docs/Sessions/SETUP_Continuous-Deployment/env/teardown.ps1` script from the setup folder.  
+
+Navigate to the admin section of your VSTS account: `https://{VSTS instance name}.visualstudio.com/_admin`
+
+Right-click the ellipsis button, the click ***Delete*
+
+Confirm the name for deletion
 
 ## Complementary Information
 
