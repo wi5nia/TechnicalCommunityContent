@@ -78,7 +78,7 @@ We want to push the PartsUnlimitedMRP application code to your Visual Studio Tea
 
  ![](<media/extracted_files_in_reposirory_folder.png>)
 
-0. Back at the command line, add stage all files with git, commit them and push to VSTS
+0. Back at the command line, add/stage all files with git, commit them and push to VSTS
 
  ```
  git add . --force
