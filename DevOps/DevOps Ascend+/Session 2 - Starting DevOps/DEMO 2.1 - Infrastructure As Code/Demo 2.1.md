@@ -20,7 +20,7 @@ Introduction and high-level overview of the Infrastructure As Code DevOps princi
 
 > Azure CLI is a multi-platform, open source command line interface for Azure.
 
-0. Open a command prompt at the root of your local code copy (unzipped from PartsUnlimitedMRP.zip during the setup), ie: ./PartsUnlimitedMRP
+0. Open a command prompt at the root of your repository, ie: ./PartsUnlimitedMRP
 
 0. Login to your Azure account 
  ```
@@ -86,16 +86,16 @@ Introduction and high-level overview of the Infrastructure As Code DevOps princi
         ...
         info:    group deployment create command OK
 
- [ !!! Explain that this can take up to 10 minutes, so don't wait and we'll switch to VSCode 
-    to examine what the ARM template is that we are using]
+ [ !!! Explain that this can take up to 10 minutes, so we won't wait and we'll switch to VSCode 
+    to examine what is this ARM template that we are using]
  
 ## Explain what an Azure Resource Manager Template is
 
-> Visual Studio CODE is multi-platform, open source editor.
+> Visual Studio CODE is a multi-platform, open source editor.
 
 0. Launch Visual Studio code
 
-0. Open Your repository copy folder 
+0. Open Your repository folder (the one you unzipped and pushed to VSTS during setup)
  
  ![](<media/open_repo_folder_vscode.png>)
 
@@ -121,9 +121,9 @@ Introduction and high-level overview of the Infrastructure As Code DevOps princi
     > **parameters** (optional elements that define values that are passed in when the template is executed).
         The value for the Parameters key is an array of parameter objects that
         represents the dynamic inputs for the JSON template.
-        Each of the parameter objects has a name that is used to pass values in the template at runtime and is referenced within the JSON itself in other sections.
+        Each of the parameter objects has a name that is used to pass values in to the template at runtime and is referenced within the JSON itself in other sections.
 
-    > **variables** (optional elements that define the values that are used when template is executed).
+    > **variables** (optional elements that define the values that are used when the template is executed).
         You can have static variables (static string) or dynamic variables (because they have a template expression).
 
     > **resources** (a required element that defines the resources that are deployed or updated in a resource group).
@@ -168,8 +168,8 @@ Introduction and high-level overview of the Infrastructure As Code DevOps princi
 
  ![](<media/arm_template_resources.png>)
 
- > There are many resources that will be created in this template; you can quickly see that 
- > we have a storage account that will be used for the virtual machine disk and also for VM diagnostics.
+ > There are many resources that will be created in this template, you can quickly see that 
+ > we have a storage account that will be used for the virtual machine disk and also for VM diagnostic.
  >
  > There is also the public IP that will be used by the virtual machine
 
@@ -184,9 +184,9 @@ Introduction and high-level overview of the Infrastructure As Code DevOps princi
  > **type** defines which resource type you are describing, in this case the resource provider is `Microsoft.Compute`
  > and the resource type is a virtualMachine
  >
- > **name** a unique name for the resource in Azure, for a virtual machine this is not to be confused with the DNS name which is set in the Public IP resource  
+ > **name** a unique name for the resource in Azure; for a virtual machine this is not to be confused with the DNS name which is set in the Public IP resource  
  >
- > **location** is in which Azure region the resource will be provisioned.
+ > **location** is the Azure region in which the resource will be provisioned.
  >
  > **properties** is the property bag for the resource type. Each resource type will have a different bag of properties for you to set.
 
@@ -201,14 +201,15 @@ Introduction and high-level overview of the Infrastructure As Code DevOps princi
  > Virtual Machines extensions are special resources that install and execute an agent on the virtual machine. 
  > The one used in this template will execute a shell script through bash.
  >
- > The `fileUris` propertie will instruct the agent which files need to be downloaded onto the virtual machine before executing the command
- > set in the `commandToExecute` property.
+ > You can provide a `fileUris` property to instruct the agent which files need to be downloaded onto the virtual machine before executing the command
+ > set in the `commandToExecute` property. In our case all commands are in-lined. It is a bit more difficult to read, so we'll show a more eye friendly
+ > version of the commands in an external file.
 
 0. Using the navigation pane (CTRL+B is hidden) open the file `install_mrp_dependencies.sh`
 
  ![](<media/arm_template_customscript.png>)
  
- > As you can see this will perform a number of install on the Linux virtual Machine, install Java JDK, Java runtime, mongodb, tomcat, etc...
+ > As you can see this will perform a number of installs on the Linux virtual Machine; install Java JDK, Java runtime, mongodb, tomcat, etc...
 
 ## Show the resources in the Azure portal
  
@@ -216,7 +217,7 @@ Introduction and high-level overview of the Infrastructure As Code DevOps princi
 
  ![](<media/browse_rg_azure_portal.png>)
 
-> The JSON template can be put inside source control & version of it can be track to follow the evolution of your project. This is why this kind of approach is called
+> The JSON template can be put inside source control & a version of it can be tracked to follow the evolution of your project. This is why this kind of approach is called
 > *Infrastruture As Code* 
 
 ## Teardown

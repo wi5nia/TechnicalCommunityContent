@@ -22,15 +22,16 @@ Introduction and high-level overview of the Application Performance Management D
 
  ![](<media/browse_mrp_around.png>)
 
- [Explain that there is presently a performance problem and that this page is very long to load]
+ [Explain that there is presently a performance problem and that this page is very slow to load]
 
  ![](<media/long_dealers_loading.png>)
 
- [Explain that since we do not have a lot of time for the demo we will immediately modify the code that causes this and we'll check out how APM fits into that later]
+ [Explain that since we do not have a lot of time for the demo we will immediately modify the code that causes this to start a new build/deployment 
+  and we'll check out how APM is setup in the meantime]
 
-0. Navigate to the working folders of your PartsUnlimitedMRP code in a code editor (such as VSCode).
+0. Navigate to the working folders of your PartsUnlimitedMRP repo in a code editor (such as VSCode).
 
- > We know that in our case that this performance problem is when we ask for the dealers so this must come from
+ > We know that this performance problem happens when we ask for the dealers so this must come from
  > the dealers controller or the dealers repository 
 
 0. Find the `getDealers()` method in `./src/Backend/OrderService/src/main/java/smpl/ordering/controllers/DealerController.java` that is causing slow performance.
@@ -41,10 +42,10 @@ Introduction and high-level overview of the Application Performance Management D
 
  ![](<media/get_dealers_loop_problem.png>)
  
- > Notice that when a request is made to get the dealers, the code loops several thousand times into MongoDB 
+ > Notice that when a request is made to get the dealers, the code loop several thousand times into MongoDB 
  >
- > Usually you would have gone into your APM tool and identified problems from there, we'll see in a a minute
- > that APM would have helped us spot this problem right away
+ > Usually you would have gone into your APM tool and identify problems from there, we'll see in a a minute
+ > that APM would have help us spot this problem right away
  
 0. Change the value of the **numMongoDBCalls** variable to 1
  
@@ -59,7 +60,7 @@ Introduction and high-level overview of the Application Performance Management D
  [This will take between 3-5 minutes, meanwhile we'll show how Application Insights is integrated in build]
 
  > Now this will take some time since it will trigger the CI build, then the CD build onto the *Dev* environment.
- > Let's briefly see what we can see in APM and what would have helped us identify the problem in the first place...
+ > Let's briefly see  what we can see in APM and what would have helped us identify the problem in the first place...
 
 0. In a new browser tab, browse to the Azure portal into your dev environment, open the **Application insights resource**
 
@@ -76,16 +77,16 @@ Introduction and high-level overview of the Application Performance Management D
  [Explain under **Average of Dependency duration by Remote dependency name** there is an abnormal number of calls to MongoDB, maybe this is related...]
 
  > We can see that there is a problem in there... The number of calls to MongoDB.FindAll is way too high compared to 
- > the number of page requests.
+ > the number of page requests that have.
 
 0. Click the “Failure” tile to have a view over failure
 
  ![](<media/app_insights_failure_tile_details.png>)
 
- > You can also trace failures or errors if you want. You really have a lot of details around failures at web app level or server level
- > depending on how you configure your environment & code. In the MRP solution, only code is instrumented.
+ > You can also trace failures or error if you want. You really have a lot of details around failures at web app level or server level
+ > depending on how you configure your environment & code. In the MRP application, only code is instrumented.
  > 
- > You can click on errors that interest you to get all the occurrences of that error. Doing so enables you to view 
+ > You can click on errors that interest you to get all the occurrence of that error. Doing so enable you to view 
  > a single occurrence of this error and get details about that specific event.
  >
  > Let's take a look at how instrumentation is done in Parts Unlimited MRP
@@ -116,12 +117,18 @@ Introduction and high-level overview of the Application Performance Management D
 
  [Check back in VSTS to confirm the deployment on the *Dev* environment is completed]
 
-0. Navigate again around and return to the **Dealers** section. 
+0. Navigate around in the application and return to the **Dealers** section. 
 
  [The dealers will show up faster than they did previously now having one call to the database.]
 
 ## Teardown
-Once the session is over you can go to the Azure portal and delete the resource groups used for the PartsUnlimitedMRP deployment.  
+If you don't intend to perform another session in this series, you can delete the resources for the dev & prod environments in Azure. Execute `/docs/Sessions/SETUP_Continuous-Deployment/env/teardown.ps1` script from the setup folder.  
+
+Navigate to the admin section of your VSTS account: `https://{VSTS instance name}.visualstudio.com/_admin`
+
+Right-click the ellipsis button, the click ***Delete*
+
+Confirm the name for deletion
 
 ## Complementary information
 

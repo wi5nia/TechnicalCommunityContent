@@ -15,7 +15,7 @@ Introduction and high-level overview of the Continuous Integration DevOps princi
 
 ## Explain the build functionalities
 
-0. Browse to VSTS project page for Parts Unlimited MRP at `http://<YourVSTSAccount>.visualstudio.com/PartsUnlimitedMRP` and navigation to the **build** page:
+0. Browse to the VSTS project page for Parts Unlimited MRP at `http://<YourVSTSAccount>.visualstudio.com/PartsUnlimitedMRP` and navigation to the **build** page:
 
     ![](<media/browse_build_page.png>)
 
@@ -34,9 +34,9 @@ Introduction and high-level overview of the Continuous Integration DevOps princi
 
     ![](<media/browse_publish_buildstep.png>)
 
-0. Click **Add build step...** to show what are the other available build steps.
+0. Click **Add build step...** to show what other build steps are available.
 
- [Explain there are various other build steps to choose from; a lot of open source options are present]    
+ [Explain there are various other build steps to choose from, a lot of open source options are present]    
 
 ## Show the available build definition options
 
@@ -66,7 +66,7 @@ Introduction and high-level overview of the Continuous Integration DevOps princi
 
     ![](<media/browse_triggers_tab.png>)
 
-    > Builds can be triggered two different ways:
+    > Builds can be triggered in two different ways:
     >
     > * On each checkin (batch or single commits)
     > * Scheduled times (weekly reccurence)
@@ -101,8 +101,8 @@ Introduction and high-level overview of the Continuous Integration DevOps princi
      > * Xamarin    
      > * etc...
      >
-    > It's also possible to **specify single or multiple demand(s)** that the agent must meet in order to do the build.  For example, MRP
-    > runs in Java so it is possible to ensure that java exists on the agent.
+    > It' also possible to **specify a single or multiple demand(s)** that the agent must meet in order to the build.  For example, MRP
+    > runs in Java so it is possible ensure the that java exists on the agent.
 
     ![](<media/browse_general.png>)
 

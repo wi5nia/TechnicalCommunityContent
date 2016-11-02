@@ -50,7 +50,7 @@ Introduction and high-level overview of the Automated Testing DevOps principal i
 
 ## Show the load test automation
 
-0. Browse to the VSTS project page for Parts Unlimited MRP at `http://<YourVSTSAccount>.visualstudio.com/PartsUnlimitedMRP` and navigation to the **release** page:
+0. Browse to VSTS project page for Parts Unlimited MRP at `http://<YourVSTSAccount>.visualstudio.com/PartsUnlimitedMRP` and navigate to the **release** page:
 
     ![](<media/browse_release_page.png>)
 
@@ -60,8 +60,8 @@ Introduction and high-level overview of the Automated Testing DevOps principal i
 
 0. Make sure the _DEV_ environment and select the **Create Load Test Configuration** task:
 
-    > Since load tests are usually a long process that are executed on a provisioned environment, it makes sense to incoporate them in the release management phase of the
-    > DevOps cycle.  We can imagine a scenario where load tests are executed on the latest proviosioned _DEV_ environment to make sure performance is adequate before
+    > Since load tests are usually a long process that are executed on a provisioned environment, it makes sense to incorporate them in the release management phase of the
+    > DevOps cycle.  We can imagine a scenario where load tests are executed on the latest provisioned _DEV_ environment to make sure performance is adequate before
     > approving the release for the _PROD_ environment.  Here, a **PowerShell** task creates a **JMeter load test file (\*.jmx)** for a specific cloud app environment (ex: _pumrp-test-1234-dev.westus_).  It's easily
     > configurable for the _PROD_ environment if need be:
 

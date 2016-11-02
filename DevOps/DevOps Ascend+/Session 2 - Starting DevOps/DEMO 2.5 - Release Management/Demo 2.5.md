@@ -15,7 +15,7 @@ Introduction and high-level overview of the Release Management DevOps principal 
 
 ## Explain the release management functionalities
 
-0. Browse to **Release** tab in VSTS
+0. Browse to **Release** tab
 
  ![](<media/browse_release_tab.png>)
 
@@ -35,8 +35,8 @@ Introduction and high-level overview of the Release Management DevOps principal 
  > In the case of PartsUnlimitedMRP, there are only two environements, **Dev** & **Prod**. But in your release pipeline you
  > could have more environments than this... We can easily think about QA, Staging, UAT, etc..
  > 
- > Environments do not need to have the same tasks defined. For example, prior to production, you can have more tasks. 
- > It is the right place to run tests other than unit tests like (Integration, UI, Performance, Load tests) 
+ > Environments do not need to have the same tasks defined, for example, for production, you can have more tasks. 
+ > It is the right place to run tests other than unit tests like Integration, UI, Performance, Load tests 
  >
  > In **Dev** for MRP, we have four (4) tasks compared to only two (2) in **Prod** 
 
@@ -57,7 +57,7 @@ Introduction and high-level overview of the Release Management DevOps principal 
  > You can have All users in any order, All users in sequential order or Any one user 
  >
  > In the options at the bottom, you'll most likely want to enable email notification 
- > for the approver upon whom approval is waiting
+ > for the approver whom approval is pending on
 
 0. ENSURE **Send an email notification to the approver whom the approval is pending on** is checked
 
@@ -65,14 +65,14 @@ Introduction and high-level overview of the Release Management DevOps principal 
 
  ![](<media/prod_variables.png>)
 
- [Explain that you defines variables that are specific to an environment in here and 
+ [Explain that you define variables that are specific to an environment in here and 
   that they can later be referenced inside build tasks]
 
 0. Click the **Deployment conditions** tab
 
  ![](<media/prod_deployment_conditions.png>)
 
- > In the first environment (Dev), the deployment is automatic as soon as a *Release* is created but now in *Prod*.
+ > In the first environment (Dev), the deployment is automatic as soon as a *Release* is created but not in *Prod*.
  > In *Prod* we want to trigger the deployment only after it was successful in *Dev*
 
 0. Click the **General** tab
@@ -89,7 +89,7 @@ Introduction and high-level overview of the Release Management DevOps principal 
 
  ![](<media/cd_tiggers_tab.png>)
 
- > Triggers are what enable this build to be a Continuous Deployment build. It's a CD build that makes the 
+ > Triggers is what enable this build to be a Continuous Deployment build. It's a CD build that makes the 
  > Release pipeline possible in MRP. 
  > 
  > It this case, it will trigger when the *PartsUnlimitedMRPCI* build produces new artifacts
@@ -128,13 +128,13 @@ Introduction and high-level overview of the Release Management DevOps principal 
 
 0. Click the **Abandon** button
 
- > You can Abandon a release at any point in time and doing so, no other further actions are possible on that release
+ > You can Abandon a release at any point in time and doing so, no further actions are possible on that release
 
 0. Click the **Send Email** button
 
  [Explain that you can send an email with release details to other people]
 
- [ !!! Most likely the deployment to the *Dev* environment will not be completed, 
+ [ !!! Most likely the deployment to the *Dev* environment will not be completed yet, 
   if it's the case, approve an older release to *Prod* environment]
 
 0. Approve a release to **Prod**.
