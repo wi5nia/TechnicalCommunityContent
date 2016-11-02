@@ -270,7 +270,7 @@
     }
   ],
   "outputs": {
-    "appInsightsIntrumentationKey": {
+    "appInsightsInstrumentationKey": {
       "type": "string",
       "value": "[reference( resourceId('microsoft.insights/components', variables('mrpVmName') ), variables('applicationInsightsApiVersion') ).InstrumentationKey]"
     }

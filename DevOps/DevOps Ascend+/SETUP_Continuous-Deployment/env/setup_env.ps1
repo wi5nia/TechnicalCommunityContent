@@ -11,7 +11,7 @@ param(
     $AdminUsername = 'azureuser',
     [Parameter()]
     [string]
-    $AdminPassword = '8iC73psK6eX/9-cTXmp-wMfEeO',
+    $AdminPassword = '8iC73psK6eX/9cTXmpw!MfEeO',
     [Parameter()]
     [string]
     $Location = 'West US'
@@ -50,13 +50,13 @@ $prodFqdn = (Get-AzureRmPublicIpAddress -ResourceGroupName $prodRg.ResourceGroup
 
 $devEnvParams.Add('hostname', $devFqdn)
 $devEnvParams.Add('MRP url', ('http://{0}:9080/mrp' -f $devFqdn))
-$devEnvParams.Add('AppInsights Intrumentation Key', $devDeploy.Outputs.appInsightsIntrumentationKey.value)
+$devEnvParams.Add('AppInsights Intrumentation Key', $devDeploy.Outputs.appInsightsInstrumentationKey.value)
 Write-Host
 Write-Host 'Dev environment details'
 $devEnvParams | Format-Table -Force
 
 $prodEnvParams.Add('hostname', $prodFqdn)
 $prodEnvParams.Add('MRP url', ('http://{0}:9080/mrp' -f $prodFqdn))
-$prodEnvParams.Add('AppInsights Intrumentation Key', $prodDeploy.Outputs.appInsightsIntrumentationKey.value)
+$prodEnvParams.Add('AppInsights Intrumentation Key', $prodDeploy.Outputs.appInsightsInstrumentationKey.value)
 Write-Host 'Prod environment details'
 $prodEnvParams | Format-Table -Force

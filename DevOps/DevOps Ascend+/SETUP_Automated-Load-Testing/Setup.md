@@ -13,7 +13,7 @@ In this setup, you will perform the following:
 
 **Create a VS Team Service Endpoint:**
 
-This step has you create a service endpoint you will use in your automated load test.
+This step has you create a service endpoint which you will use in your automated load test.
 
 **Create and configure an Apache JMeter load test:**
 
@@ -21,7 +21,7 @@ In this step, you will configure an Apache JMeter load test in the _DEV_ environ
 
 **Execute a load test:**
 
-In this optional step, you will execute a continuous deployment to be able to show load test results.
+In this optional step, you will execute a continuous deployment to be able to show load test results in demos.
 
 -----------------------------------------------------------------------------------
 ## Task# 1: Create a VS Team Service Endpoint
@@ -56,7 +56,7 @@ In this optional step, you will execute a continuous deployment to be able to sh
 
     https://{VSTS instance name}.visualstudio.com/PartsUnlimitedMRP
 
-**2.** Navigation to the build page by clicking the **Build** tab:
+**2.** Navigate to the build page by clicking the **Build** tab:
 
 ![](<media/browse_build_page.png>)
 
@@ -81,7 +81,7 @@ In this optional step, you will execute a continuous deployment to be able to sh
 
 ![](<media/save_build_defintion.png>)
 
-**6.** Navigation to the release management page by clicking the **Release** tab:
+**6.** Navigate to the release management page by clicking the **Release** tab:
 
 ![](<media/browse_release_page.png>)
 
