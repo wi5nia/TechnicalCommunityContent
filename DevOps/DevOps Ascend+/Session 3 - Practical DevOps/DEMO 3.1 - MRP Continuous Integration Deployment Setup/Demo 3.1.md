@@ -71,11 +71,11 @@ Configure the release definition in VSTS that picks up build artifacts and trigg
 
  `cd PartsUnlimitedMRP-SetupDemo`
 
-0. Open the file *PartsUnlimitedMRP.zip* (located in the SETUP_Continuous-Deployment folder), then copy the contents into the repository folder you just created from VSTS.
+0. Copy the file *PartsUnlimitedMRP.zip* (found under the Resources folder with these presentation materials) into this folder, open it, select all the files/folders in it, then copy the contents into this PartsUnlimitedMRP-SetupDemo folder.
 
  ![](<../../SETUP_Continuous-Deployment/media/extracted_files_in_reposirory_folder.png>)
 
-0. Add/stage all files with git, commit them and push to VSTS
+0. Back atht the command line, add/stage all files with git, commit them and push to VSTS
 
  ```
  git add . --force

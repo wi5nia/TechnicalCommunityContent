@@ -64,7 +64,7 @@ We want to push the PartsUnlimitedMRP application code to your Visual Studio Tea
 
  ![](<media/copy_vsts_repo_url.png>)
 
-0. Clone the **PartsUnlimitedMRP** git repository onto your local machine, open your command-line tool and type :
+0. Clone the **PartsUnlimitedMRP** git repository onto your local machine, open your command-line tool (perhaps in your "Documents" folder) and type :
 
  `git clone <CloneURL> PartsUnlimitedMRP`
 
@@ -74,7 +74,7 @@ We want to push the PartsUnlimitedMRP application code to your Visual Studio Tea
 
  `cd PartsUnlimitedMRP`
 
-0. Open the file *PartsUnlimitedMRP.zip* (located in the folder with these instructions), then copy the contents into the repository folder you just created from VSTS.
+0. Copy the file *PartsUnlimitedMRP.zip* (found under the Resources folder with these presentation materials) into this folder, open it, select all the files/folders in it, then copy the contents into this PartsUnlimitedMRP folder.
 
  ![](<media/extracted_files_in_reposirory_folder.png>)
 
