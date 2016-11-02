@@ -1,6 +1,8 @@
-# Ascend+ Community Content README #
+IN PROGRESS
 
-Each sub-folder provides content for one session.  
+# Ascend+ Community Content - DevOps #
+
+Each sub-folder provides content for one session.  You may also see additional folders with materials that are shared between sessions.  The sessions will refer to those folders.
 
 Each session presentation is intended to last around 45-minutes, allowing time for Q&A if desired.
 
