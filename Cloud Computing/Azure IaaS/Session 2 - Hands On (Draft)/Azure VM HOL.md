@@ -29,7 +29,7 @@ In this hands-on lab, you will learn how to:
 
 The following are required to complete this hands-on lab:
 
-- An active Microsoft Azure subscription. If you don't have one, [sign up for a free trial](http://aka.ms/WATK-FreeTrial).
+- An active Microsoft Azure subscription. Use the Azure Pass you activated earlier, or [sign up for a free trial](http://aka.ms/WATK-FreeTrial).
 - [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) (Windows users only)
 
 <a name="Exercises"></a>
@@ -317,5 +317,3 @@ In this hands-on lab, you learned how to:
 The Azure Virtual Machine service gives you a lot of powerful options for configuring and deploying virtual machines into the Cloud.  But remember, "with great power, comes great responsibility."  Although VM's allow you to the greatest options for custom configuration, you are also signing up for the related responsibility of managing the VM, especially including timely application of OS and security patches.
 
 ---
-
-Copyright 2016 Microsoft Corporation. All rights reserved. Except where otherwise noted, these materials are licensed under the terms of the MIT License. You may use them according to the license as is most appropriate for your project. The terms of this license can be found at https://opensource.org/licenses/MIT.
