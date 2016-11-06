@@ -2,7 +2,7 @@
 
 ## Objectives
 
-Shoe the Remote Monitoring solution and some of the components that are used to build it.
+Show the Remote Monitoring solution and some of the components that are used to build it.
 
 ## Requirements
 

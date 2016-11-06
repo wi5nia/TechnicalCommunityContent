@@ -40,13 +40,13 @@ The snapshot version of the Remote Monitoring solution needs to be deployed prio
 
 1.  Locate the Demo 3.1 folder under the Solutions folder for this session
 
-2.  Start a Command Prompt as an Administrator
+2.  Start the “Developers Command Prompt for Visual Studio” as an Administrator
 
 3.  CD to the Demo 3.1 folder
 
 4.  Type: build.cmd cloud release deploymentname
 
-    (where deploymentname is a globally unique name you choose – keep it to an alphanumeric name starting with alpa with no spaces/symbols perhaps ending in todays date as yyyymmdd)
+    (where deploymentname is a globally unique name you choose – keep it to an alphanumeric name starting with alpha with no spaces/symbols perhaps ending in todays date as yyyymmdd)
 
 ## Demo Steps: Predictive Maintenance Solution tour
 

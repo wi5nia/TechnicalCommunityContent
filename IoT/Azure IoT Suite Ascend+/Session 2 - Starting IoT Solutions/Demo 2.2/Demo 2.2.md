@@ -62,7 +62,7 @@ If you’re doing your presentation from a Linux PC then you can skip to Install
 
 You now need to install NPM and the Azure Node module. Type the following:
 
-1.  sudo apt-update
+1.  sudo apt-get update
 
 2.  sudo apt-get install npm
 
@@ -75,22 +75,6 @@ Install the Azure Node packages:
 1.  sudo npm install -g azure-iot-device@latest
 
 2.  sudo npm install -g azure-iot-device-amqp@latest
-
-### Setup demo code
-
-You now need to copy the code.
-
-1.  On your Windows machine, open mydevice.js with Notepad the copy all the code
-
-2.  In the Ubuntu console, launch the VIM editor by typing: vim mydevice.js
-
-3.  Inside the console, right-click with your mouse, this will paste the code you copying earlier.
-
-4.  Press the Escape key.
-
-5.  Type :wq! (yes, that’s a *colon* followed by *w* *q* and an *exclamation mark*)
-
-6.  You’re back at the command prompt.
 
 ## Demo Steps
 
@@ -122,27 +106,41 @@ Let’s new create a new device.
 
     <img src="./media/image12.png" width="624" height="325" />
 
-8.  In the Ubuntu command prompt, type vim mydevice.js. This will open the node code.
+### Setup demo code
 
-9.  Locate the connectionString and right-click to paste the value you copied earlier.
+You now need to copy the code.
+
+1.  On your Windows machine, open mydevice.js with Notepad the copy all the code
+
+2.  Locate the connectionString and paste the value you copied earlier.
+
+3.  Copy the whole code to the clipboard.
+
+4.  In the Ubuntu console, launch the VIM editor by typing: vim mydevice.js
+
+5.  Inside the console, right-click with your mouse, this will paste the code you copying earlier.
+
+6.  Press the Escape key.
+
+7.  Type :wq! (yes, that’s a *colon* followed by *w* *q* and an *exclamation mark*)
+
+8.  You’re back at the command prompt.
+
+9.  At the command prompt type: node mydevice.js
+
+<!-- -->
+
+1.  The device is now sending telemetry to IoT Hub.
 
     <img src="./media/image13.png" width="624" height="395" />
 
-10. Save the file by typing ESC followed by :wq!
+2.  Head to the Remote Monitoring Web site, select the new device from the dropdown menu. The graph will display the telemetry.
 
-11. At the command prompt type: node mydevice.js
+    <img src="./media/image14.png" width="624" height="312" />
 
-12. The device is now sending telemetry to IoT Hub.
+3.  Press Control-C in the Ubuntu command prompt window to stop the node script.
 
-    <img src="./media/image14.png" width="624" height="395" />
-
-13. Head to the Remote Monitoring Web site, select the new device from the dropdown menu. The graph will display the telemetry.
-
-    <img src="./media/image15.png" width="624" height="312" />
-
-14. Press Control-C in the Ubuntu command prompt window to stop the node script.
-
-15. This completes this demo.
+4.  This completes this demo.
 
 ## Teardown
 

@@ -20,7 +20,7 @@ A known version of the Remote Monitoring solution needs to be deployed prior to 
 
 1.  Locate the Demo 3.2 folder under the Solutions folder for this session
 
-2.  Start a Command Prompt as an Administrator
+2.  Start a “Developers Command Prompt for Visual Studio” as an Administrator
 
 3.  CD to the Demo 3.2 folder
 

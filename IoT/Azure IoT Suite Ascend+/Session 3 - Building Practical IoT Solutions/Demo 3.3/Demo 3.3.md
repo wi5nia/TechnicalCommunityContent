@@ -4,7 +4,7 @@ Duration 5-10 minutes.
 
 ## Objectives
 
-The purpose of this demo is to show how an additional cloud component (the Azure App Service Log App offering in this case) can be added to enhance an IoT solution.
+The purpose of this demo is to show how an additional cloud component (the Azure App Service Logic App offering in this case) can be added to enhance an IoT solution.
 
 ## Setup
 

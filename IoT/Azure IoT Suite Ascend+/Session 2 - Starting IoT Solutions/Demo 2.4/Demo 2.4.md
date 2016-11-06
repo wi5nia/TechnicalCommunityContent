@@ -12,6 +12,8 @@ A Raspberry Pi 2 or 3 (recommended) with the latest version of Raspbian installe
 
 *A means to connect to the RPi for input, video & network*. You will need to be able to connect a keyboard (and mouse) to the device as well as an HDMI display. You will also need a network connection – a Pi 3 has wifi. Remember that not all presentation venues will have HDMI, so this demo may not be possible or you may need an adapter. Here’s a link to a combo keyboard/trackpad product that should work with Raspian (and Windows IoT Core) - <http://www.logitech.com/en-ca/product/wireless-touch-keyboard-k400-plus>.
 
+Another way to connect to the RPi is by using VNC. VNC is installed by default on Raspbian, you need to enable it and from you Mac or Windows machine, download and install the VNC client. Please refer to this documentation page to enable and use VNC with your Raspberry Pi and Raspbian: <https://www.raspberrypi.org/documentation/remote-access/vnc/>
+
 An active Azure subscription. If you don’t have an account, you can create a free trial account in just a couple of minutes. For details, see <http://azure.microsoft.com/pricing/free-trial/>
 
 ## Setup
@@ -22,9 +24,11 @@ Find the Solutions folder for this presentation, then the Demo 2.4 folder, and t
 
 If not already installed, install NPM on the Raspberry Pi. Open a command prompt and type the following:
 
-1.  sudo apt-get install npm
+1.  sudo apt-get update
 
-2.  sudo npm install -g npm@latest
+2.  sudo apt-get install npm
+
+3.  sudo npm install -g npm@latest
 
 Install the Azure Node packages:
 

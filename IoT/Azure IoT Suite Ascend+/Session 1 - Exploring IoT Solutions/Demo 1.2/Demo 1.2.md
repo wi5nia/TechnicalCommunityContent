@@ -4,7 +4,7 @@ This demo should take between 10 and 15 minutes.
 
 ## Objectives
 
-The demo goal is to drill into the kind of features provides by a typical IoT monitoring system. To do this, you’ll use the Azure IoT Suite’s Remote Monitoring solution using simulated devices. You’ll show a Web application displaying devices status, telemetry and positions on a map. You’ll show how an administrator can add a new device, send commands to a device and monitor alerts.
+The demo goal is to drill into the kind of features provided by a typical IoT monitoring system. To do this, you’ll use the Azure IoT Suite’s Remote Monitoring solution using simulated devices. You’ll show a Web application displaying devices status and telemetry. You’ll show how an administrator can add a new device, send commands to a device and monitor alerts.
 
 For this demo, there’s no need to look under the hood, understand the code and explain how the solution is built. Again, the goal is to demonstrate the functionalities of a typical IoT dashboard.
 
