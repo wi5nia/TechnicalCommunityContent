@@ -1,0 +1,1 @@
+C:\Users\Jeff\Documents\GitHub\TechnicalCommunityContent\Big Data and Analytics\Azure Machine Learning\Session 2 - Hands On\solutions\MLClient\MLClient\bin\x86\Debug\System.ServiceModel.NetTcp.dll

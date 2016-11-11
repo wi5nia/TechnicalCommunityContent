@@ -1,3 +1,6 @@
+# Copyright (c) 2015 Microsoft. All rights reserved. Licensed under the MIT License.
+# See License.txt in the project root for license information.
+
 #!/usr/bin/env python
 import sys
 import time
